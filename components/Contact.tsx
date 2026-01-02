@@ -27,22 +27,42 @@ export default function Contact() {
                   <div className="text-2xl mr-4">📞</div>
                   <div>
                     <h4 className="font-bold mb-1">Téléphone</h4>
-                    <p className="text-blue-100">+41 XX XXX XX XX</p>
+                    <a href="tel:+41772152255" className="text-blue-100 hover:text-white transition">
+                      +41 77 215 22 55
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <div className="text-2xl mr-4">✉️</div>
                   <div>
                     <h4 className="font-bold mb-1">Email</h4>
-                    <p className="text-blue-100">contact@vernetgeneve.ch</p>
+                    <a href="mailto:info@genevenettoyage.ch" className="text-blue-100 hover:text-white transition">
+                      info@genevenettoyage.ch
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="text-2xl mr-4">🌐</div>
+                  <div>
+                    <h4 className="font-bold mb-1">Website</h4>
+                    <a href="https://www.genevenettoyage.ch" target="_blank" rel="noopener noreferrer" className="text-blue-100 hover:text-white transition">
+                      www.genevenettoyage.ch
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="text-2xl mr-4">💬</div>
+                  <div>
+                    <h4 className="font-bold mb-1">WhatsApp</h4>
+                    <p className="text-blue-100">Contactez-nous facilement via WhatsApp!</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <div className="text-2xl mr-4">🕒</div>
                   <div>
-                    <h4 className="font-bold mb-1">Heures d'Ouverture</h4>
-                    <p className="text-blue-100">Lun - Ven: 8h00 - 18h00</p>
-                    <p className="text-blue-100">Sam: 9h00 - 13h00</p>
+                    <h4 className="font-bold mb-1">Disponibilité</h4>
+                    <p className="text-blue-100">24h/24 et 7j/7</p>
+                    <p className="text-blue-100 text-sm mt-1">Service Non-Stop</p>
                   </div>
                 </div>
               </div>

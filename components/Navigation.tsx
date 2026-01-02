@@ -43,7 +43,7 @@ export default function Navigation() {
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-display font-bold text-gray-900 leading-tight">
-                Vernetgeneve
+                Genève Nettoyage
               </span>
               <span className="text-xs text-gray-600 font-medium hidden sm:block">
                 Excellence en Nettoyage
@@ -73,7 +73,7 @@ export default function Navigation() {
               <div className="p-2 bg-accent-50 rounded-lg group-hover:bg-accent-100 transition-colors">
                 <Phone className="w-4 h-4 text-accent-600" />
               </div>
-              <span className="font-semibold text-sm">+41 XX XXX XX XX</span>
+                    <span className="font-semibold text-sm">+41 77 215 22 55</span>
             </a>
             
             <Link
@@ -122,7 +122,7 @@ export default function Navigation() {
                     onClick={() => setIsOpen(false)}
                   >
                     <Phone className="w-5 h-5" />
-                    <span>+41 XX XXX XX XX</span>
+                          <span>+41 77 215 22 55</span>
                   </a>
                   <Link
                     href="#contact"

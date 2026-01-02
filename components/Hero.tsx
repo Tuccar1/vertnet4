@@ -118,7 +118,7 @@ export default function Hero() {
             className="text-xl md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md"
           >
             Services de nettoyage professionnel de qualité supérieure pour les
-            entreprises et particuliers à Genève et en Suisse
+            entreprises et particuliers à Genève. Disponible 24h/24 et 7j/7.
           </motion.p>
 
           <motion.div
