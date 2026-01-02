@@ -4,7 +4,6 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      {/* Diğer bölümler buraya eklenecek */}
     </main>
   )
 }
