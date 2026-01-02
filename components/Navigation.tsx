@@ -21,6 +21,8 @@ export default function Navigation() {
     { href: '/', label: 'Accueil' },
     { href: '/services', label: 'Services' },
     { href: '/a-propos', label: 'À Propos' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/portfolio', label: 'Portfolio' },
     { href: '/politique-de-qualite', label: 'Qualité' },
     { href: '/contact', label: 'Contact' },
   ]
