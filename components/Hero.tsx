@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Sparkles, Shield, Clock } from 'lucide-react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 export default function Hero() {
   const containerVariants = {
@@ -38,7 +37,7 @@ export default function Hero() {
       id="accueil"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Background Image */}
+      {/* Background Image - Window Cleaner on High-Rise Building */}
       <div className="absolute inset-0 z-0">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -46,7 +45,8 @@ export default function Hero() {
             backgroundImage: 'url(https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)',
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-silver-900/80 via-silver-800/70 to-silver-900/80"></div>
+          {/* Darker overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-silver-900/85 via-silver-800/75 to-silver-900/85"></div>
         </div>
         {/* Overlay Pattern */}
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
@@ -110,7 +110,7 @@ export default function Hero() {
             className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight drop-shadow-lg"
           >
             Votre Partenaire de{' '}
-            <span className="gradient-text-secondary bg-gradient-to-r from-secondary-400 to-secondary-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-secondary-400 to-secondary-500 bg-clip-text text-transparent">
               Confiance
             </span>
           </motion.h1>
