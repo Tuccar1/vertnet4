@@ -1,15 +1,19 @@
+import Navbar from '@/components/Navbar'
+import Hero from '@/components/Hero'
+import Services from '@/components/Services'
+import About from '@/components/About'
+import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-5xl font-bold text-gray-900 mb-4">
-          Hoş Geldiniz
-        </h1>
-        <p className="text-xl text-gray-600">
-          Yeni web siteniz hazır!
-        </p>
-      </div>
-    </main>
+    <>
+      <Navbar />
+      <Hero />
+      <Services />
+      <About />
+      <Contact />
+      <Footer />
+    </>
   )
 }
-

@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Vernetgeneve',
-  description: 'Modern web sitesi',
+  title: 'Vernetgeneve - Excellence en Nettoyage Professionnel',
+  description: 'Services de nettoyage professionnel de qualité supérieure à Genève et en Suisse. Nettoyage commercial, résidentiel, médical et industriel.',
+  keywords: 'nettoyage, Genève, Suisse, nettoyage professionnel, nettoyage commercial',
 }
 
 export default function RootLayout({
@@ -12,9 +13,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="tr">
+    <html lang="fr">
       <body className="antialiased">{children}</body>
     </html>
   )
 }
-
