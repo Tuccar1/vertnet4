@@ -53,6 +53,17 @@
       padding: 0;
     }
     
+    /* Hero section arka planını scale'dan bağımsız yap */
+    body > div:first-child section[id="accueil"] {
+      position: relative;
+    }
+    
+    body > div:first-child section[id="accueil"] > div:first-child {
+      transform: scale(1.25);
+      transform-origin: top left;
+      width: 80%;
+    }
+    
     /* Tüm section'ları scale içine al */
     body > div:first-child > * {
       position: relative;

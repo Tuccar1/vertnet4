@@ -68,15 +68,31 @@ export default function Hero() {
     <section
       id="accueil"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
-      style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden', left: 0, right: 0 }}
+      style={{ 
+        width: '100vw', 
+        maxWidth: '100vw', 
+        overflowX: 'hidden', 
+        left: '50%', 
+        right: 'auto',
+        marginLeft: '-50vw',
+        position: 'relative',
+      }}
     >
       {/* Background Image - Professional Cleaning Service */}
-      <div className="absolute inset-0 z-0" style={{ width: '100%', left: 0, right: 0 }}>
+      <div 
+        className="absolute inset-0 z-0" 
+        style={{ 
+          width: '100vw', 
+          left: '50%',
+          marginLeft: '-50vw',
+          right: 'auto',
+        }}
+      >
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)',
-            width: '100%',
+            width: '100vw',
             left: 0,
             right: 0,
           }}
