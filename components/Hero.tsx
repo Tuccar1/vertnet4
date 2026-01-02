@@ -181,7 +181,7 @@ export default function Hero() {
                 whileHover={{ 
                   scale: 1.08,
                   y: -8,
-                  rotateY: 5,
+                  rotate: 2,
                 }}
                 whileTap={{ scale: 0.98 }}
                 className="relative group"
