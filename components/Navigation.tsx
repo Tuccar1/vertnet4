@@ -38,10 +38,10 @@ export default function Navigation() {
           ? 'bg-primary-50/98 backdrop-blur-xl shadow-lg border-b border-primary-200'
           : 'bg-primary-50/80 backdrop-blur-md'
       }`}
-      style={{ width: '100%', maxWidth: '100%', left: 0, right: 0, overflowX: 'hidden', position: 'fixed' }}
-    >
-      <div className="w-full" style={{ maxWidth: '100%', overflowX: 'hidden', width: '100%' }}>
-        <div className="flex items-center justify-between h-24 gap-2 px-4 lg:px-6 xl:px-8 mx-auto" style={{ maxWidth: '100%', width: '100%', overflowX: 'hidden' }}>
+      className="fixed top-0 left-0 right-0 z-50 w-full overflow-x-hidden"
+      >
+      <div className="w-full overflow-x-hidden">
+        <div className="flex items-center justify-between h-24 gap-2 px-4 lg:px-6 xl:px-8 mx-auto w-full overflow-x-hidden">
           {/* Logo - Daha Premium */}
           <Link href="/" className="flex items-center space-x-3 group flex-shrink-0">
             <motion.div

@@ -65,8 +65,8 @@ export default function About() {
   ]
 
   return (
-    <section id="apropos" className="py-20 bg-primary-50/50" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
-      <div className="container mx-auto px-4" style={{ maxWidth: '100%', width: '100%' }}>
+    <section id="apropos" className="py-20 bg-primary-50/50 w-full overflow-x-hidden">
+      <div className="container mx-auto px-4">
         {/* Section 1: Excellence dans les Services */}
         <div className="max-w-6xl mx-auto mb-20">
           <motion.div
