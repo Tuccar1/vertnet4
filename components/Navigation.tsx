@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Menu, X, Phone, Sparkles } from 'lucide-react'
+import { Menu, X, Phone, Sparkles, ArrowRight, Mail } from 'lucide-react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -25,127 +25,213 @@ export default function Navigation() {
   ]
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-silver-100/95 backdrop-blur-xl shadow-md border-b border-silver-200'
-          : 'bg-silver-50/95 backdrop-blur-sm'
+          ? 'bg-white/98 backdrop-blur-xl shadow-lg border-b border-silver-200'
+          : 'bg-white/80 backdrop-blur-md'
       }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+      <div className="container mx-auto px-4 lg:px-6">
+        <div className="flex items-center justify-between h-24">
+          {/* Logo - Daha Premium */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative">
-              <div className="w-11 h-11 bg-gradient-to-br from-primary-400 via-accent-400 to-secondary-500 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
+            <motion.div
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative"
+            >
+              <div className="w-14 h-14 bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 relative overflow-hidden">
                 {/* @ts-ignore */}
-                <Sparkles className="w-5 h-5 text-white" />
+                <Sparkles className="w-7 h-7 text-white relative z-10" />
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-primary-400 to-accent-400 opacity-0 group-hover:opacity-100"
+                  transition={{ duration: 0.3 }}
+                />
               </div>
-            </div>
+              <motion.div
+                className="absolute -inset-1 bg-gradient-to-br from-primary-400 to-accent-400 rounded-xl opacity-0 group-hover:opacity-20 blur-md"
+                animate={{
+                  opacity: [0, 0.3, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+              />
+            </motion.div>
             <div className="flex flex-col">
-              <span className="text-xl font-display font-bold text-gray-900 leading-tight">
+              <span className="text-2xl font-display font-bold text-gray-900 leading-tight tracking-tight">
                 Genève Nettoyage
               </span>
-              <span className="text-xs text-gray-600 font-medium hidden sm:block">
-                Excellence en Nettoyage
+              <span className="text-xs text-gray-500 font-medium hidden sm:block tracking-wide">
+                Excellence en Nettoyage Professionnel
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-2">
-            {navItems.map((item) => (
+          {/* Desktop Navigation - Daha Premium */}
+          <div className="hidden lg:flex items-center space-x-1">
+            {navItems.map((item, index) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative px-4 py-2 text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200 rounded-lg hover:bg-primary-50"
+                className="relative px-5 py-2.5 text-gray-700 hover:text-primary-600 font-semibold text-sm transition-all duration-300 rounded-lg group"
               >
-                {item.label}
+                <span className="relative z-10">{item.label}</span>
+                <motion.span
+                  className="absolute inset-0 bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg opacity-0 group-hover:opacity-100"
+                  transition={{ duration: 0.3 }}
+                />
+                <motion.span
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
               </Link>
             ))}
           </div>
 
-          {/* Contact Info & CTA */}
+          {/* Contact Info & CTA - Daha Premium */}
           <div className="hidden lg:flex items-center space-x-4">
-            <a
-              href="tel:+4123456789"
+            <motion.a
+              href="tel:+41772152255"
               className="flex items-center space-x-2 text-gray-700 hover:text-accent-600 transition-colors group"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <div className="p-2 bg-accent-50 rounded-lg group-hover:bg-accent-100 transition-colors">
+              <div className="p-2.5 bg-gradient-to-br from-accent-50 to-accent-100 rounded-xl group-hover:from-accent-100 group-hover:to-accent-200 transition-all duration-300 shadow-sm group-hover:shadow-md">
                 {/* @ts-ignore */}
                 <Phone className="w-4 h-4 text-accent-600" />
               </div>
-                    <span className="font-semibold text-sm">+41 77 215 22 55</span>
-            </a>
+              <span className="font-bold text-sm">+41 77 215 22 55</span>
+            </motion.a>
             
-            <Link
-              href="#contact"
-              className="px-5 py-2.5 bg-gradient-to-r from-primary-500 to-accent-500 text-gray-900 rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
-            >
-              Devis Gratuit
-            </Link>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="#contact"
+                className="relative px-6 py-3 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 text-white rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              >
+                <span className="relative z-10 flex items-center">
+                  Devis Gratuit
+                  <motion.span
+                    className="ml-2"
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    {/* @ts-ignore */}
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.span>
+                </span>
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600"
+                  initial={{ x: '-100%' }}
+                  whileHover={{ x: 0 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </Link>
+            </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden text-gray-700 p-2 rounded-lg hover:bg-silver-200 transition-colors"
+          <motion.button
+            className="lg:hidden text-gray-700 p-2.5 rounded-xl hover:bg-silver-100 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
+            whileTap={{ scale: 0.9 }}
           >
-            {isOpen ? (
-              /* @ts-ignore */
-              <X className="w-6 h-6" />
-            ) : (
-              /* @ts-ignore */
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+            <AnimatePresence mode="wait">
+              {isOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {/* @ts-ignore */}
+                  <X className="w-6 h-6" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {/* @ts-ignore */}
+                  <Menu className="w-6 h-6" />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Daha Premium */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-              className="lg:hidden overflow-hidden border-t border-silver-200"
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="lg:hidden overflow-hidden border-t border-silver-200 bg-white"
             >
-              <div className="py-4 space-y-1">
-                {navItems.map((item) => (
-                  <Link
+              <div className="py-6 space-y-2">
+                {navItems.map((item, index) => (
+                  <motion.div
                     key={item.href}
-                    href={item.href}
-                    className="block px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg font-medium transition-all duration-200"
-                    onClick={() => setIsOpen(false)}
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: index * 0.1 }}
                   >
-                    {item.label}
-                  </Link>
+                    <Link
+                      href={item.href}
+                      className="block px-6 py-3.5 text-gray-700 hover:text-primary-600 hover:bg-gradient-to-r hover:from-primary-50 hover:to-accent-50 rounded-xl font-semibold transition-all duration-200 mx-2"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
                 ))}
-                <div className="pt-4 mt-4 border-t border-silver-200 space-y-3">
-                  <a
-                    href="tel:+4123456789"
-                    className="flex items-center space-x-3 px-4 py-3 bg-accent-50 rounded-lg text-accent-600 font-semibold"
+                <div className="pt-6 mt-6 border-t border-silver-200 space-y-3 px-2">
+                  <motion.a
+                    href="tel:+41772152255"
+                    className="flex items-center space-x-3 px-6 py-4 bg-gradient-to-br from-accent-50 to-accent-100 rounded-xl text-accent-700 font-bold shadow-md"
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: navItems.length * 0.1 }}
                     onClick={() => setIsOpen(false)}
                   >
                     {/* @ts-ignore */}
                     <Phone className="w-5 h-5" />
-                          <span>+41 77 215 22 55</span>
-                  </a>
-                  <Link
-                    href="#contact"
-                    className="block w-full text-center px-6 py-3 bg-gradient-to-r from-primary-500 to-accent-500 text-gray-900 rounded-lg font-semibold shadow-md"
-                    onClick={() => setIsOpen(false)}
+                    <span>+41 77 215 22 55</span>
+                  </motion.a>
+                  <motion.div
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: (navItems.length + 1) * 0.1 }}
                   >
-                    Devis Gratuit
-                  </Link>
+                    <Link
+                      href="#contact"
+                      className="block w-full text-center px-6 py-4 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 text-white rounded-xl font-bold shadow-lg"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Devis Gratuit
+                    </Link>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
-    </nav>
+    </motion.nav>
   )
 }
