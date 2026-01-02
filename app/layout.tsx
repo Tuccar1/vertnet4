@@ -67,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className="overflow-x-hidden" style={{ width: '100%', maxWidth: '100vw' }}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
         <link rel="stylesheet" href="/critical.css" />
         <script
           dangerouslySetInnerHTML={{

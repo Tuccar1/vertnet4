@@ -86,6 +86,16 @@
     }
   }
   
+  /* Ensure desktop viewport is detected correctly */
+  @media (min-width: 769px) and (orientation: landscape) {
+    body > div:first-child {
+      transform: scale(0.8) !important;
+      transform-origin: top left !important;
+      width: 125% !important;
+      height: 125% !important;
+    }
+  }
+  
   @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
