@@ -86,7 +86,7 @@ export default function Hero() {
           className="max-w-4xl mx-auto text-center"
         >
           <motion.div variants={itemVariants}>
-            <span className="inline-block px-6 py-3 bg-white/95 backdrop-blur-md rounded-full text-primary-700 text-sm font-bold mb-8 shadow-2xl border border-primary-200">
+            <span className="inline-block px-6 py-3 bg-gray-100 rounded-full text-gray-700 text-sm font-bold mb-8 border border-gray-200">
               Excellence en Nettoyage Professionnel
             </span>
           </motion.div>
