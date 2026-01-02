@@ -75,31 +75,6 @@ export default function Hero() {
         position: 'relative',
       }}
     >
-      {/* Background Image - Professional Cleaning Service */}
-      <div 
-        className="absolute inset-0 z-0" 
-        style={{ 
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: 0,
-        }}
-      >
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)',
-            width: '100%',
-            height: '100%',
-          }}
-        >
-          {/* Premium gradient overlay - Daha profesyonel tonlar */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-800/85 via-secondary-700/80 to-accent-800/85"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent"></div>
-        </div>
-      </div>
 
       {/* Floating Shapes - Mavi, Yeşil, Sarı */}
       <div className="absolute inset-0 overflow-hidden z-10">
@@ -184,7 +159,7 @@ export default function Hero() {
             <Link
               href="/services"
               prefetch={true}
-              className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 backdrop-blur-sm"
+              className="px-6 py-3 border-2 border-primary-600 text-primary-700 rounded-lg font-semibold text-lg hover:bg-primary-600 hover:text-white transition-all duration-300"
             >
               Nos Services
             </Link>
