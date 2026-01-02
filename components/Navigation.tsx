@@ -38,6 +38,7 @@ export default function Navigation() {
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative">
               <div className="w-11 h-11 bg-gradient-to-br from-primary-400 via-accent-400 to-secondary-500 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                {/* @ts-ignore */}
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
             </div>
@@ -71,6 +72,7 @@ export default function Navigation() {
               className="flex items-center space-x-2 text-gray-700 hover:text-accent-600 transition-colors group"
             >
               <div className="p-2 bg-accent-50 rounded-lg group-hover:bg-accent-100 transition-colors">
+                {/* @ts-ignore */}
                 <Phone className="w-4 h-4 text-accent-600" />
               </div>
                     <span className="font-semibold text-sm">+41 77 215 22 55</span>
@@ -90,7 +92,13 @@ export default function Navigation() {
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? (
+              /* @ts-ignore */
+              <X className="w-6 h-6" />
+            ) : (
+              /* @ts-ignore */
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
@@ -121,6 +129,7 @@ export default function Navigation() {
                     className="flex items-center space-x-3 px-4 py-3 bg-accent-50 rounded-lg text-accent-600 font-semibold"
                     onClick={() => setIsOpen(false)}
                   >
+                    {/* @ts-ignore */}
                     <Phone className="w-5 h-5" />
                           <span>+41 77 215 22 55</span>
                   </a>

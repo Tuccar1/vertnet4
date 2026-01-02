@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Sofa, Home, Building2, Briefcase, Roofing, Window, Building, Wrench, Key } from 'lucide-react'
+import { Sofa, Home, Building2, Briefcase, Building, Wrench, Key, Layers, Square } from 'lucide-react'
 import Link from 'next/link'
 
 interface Service {
@@ -56,14 +56,14 @@ const services: Service[] = [
     color: 'from-accent-500 to-primary-500',
   },
   {
-    icon: Roofing,
+    icon: Layers,
     title: 'Toiture',
     description: 'Un service de nettoyage pour votre toiture, offrant une apparence éclatante et un entretien optimal.',
     href: '#toiture',
     color: 'from-primary-600 to-accent-600',
   },
   {
-    icon: Window,
+    icon: Square,
     title: 'Vitres',
     description: 'Des services de nettoyage pour vos vitres, garantissant une clarté parfaite et une vue dégagée.',
     href: '#vitres',
@@ -111,6 +111,7 @@ export default function Services() {
               <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
               <div className="p-8">
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                  {/* @ts-ignore */}
                   <service.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">

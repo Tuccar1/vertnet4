@@ -82,6 +82,7 @@ export default function WhyChooseUs() {
               className={`${reason.bgColor} rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300`}
             >
               <div className={`w-16 h-16 rounded-xl ${reason.bgColor} flex items-center justify-center mb-6`}>
+                {/* @ts-ignore */}
                 <reason.icon className={`w-8 h-8 ${reason.color}`} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">

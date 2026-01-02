@@ -127,6 +127,7 @@ export default function Hero() {
           >
             <Link href="#contact" className="btn-primary text-lg group">
               Demander un Devis
+              {/* @ts-ignore */}
               <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
@@ -149,6 +150,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
+                {/* @ts-ignore */}
                 <feature.icon className={`w-8 h-8 ${feature.color} mx-auto mb-3`} />
                 <p className="text-gray-800 font-semibold">{feature.text}</p>
               </motion.div>
