@@ -8,11 +8,16 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    max-width: 100vw;
     /* Sayfayı %80 boyutunda göster */
     transform: scale(0.8);
     transform-origin: top left;
     width: 125%; /* 100% / 0.8 = 125% */
     height: 125%;
+  }
+  
+  * {
+    box-sizing: border-box;
   }
   
   @media (max-width: 768px) {

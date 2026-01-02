@@ -39,10 +39,10 @@ export default function Navigation() {
           : 'bg-primary-50/80 backdrop-blur-md'
       }`}
     >
-      <div className="container mx-auto px-4 lg:px-6 max-w-full">
-        <div className="flex items-center justify-between h-24 gap-4">
+      <div className="w-full">
+        <div className="flex items-center justify-between h-24 gap-2 px-4 lg:px-8 max-w-[1920px] mx-auto">
           {/* Logo - Daha Premium */}
-          <Link href="/" className="flex items-center space-x-3 group">
+          <Link href="/" className="flex items-center space-x-3 group flex-shrink-0">
             <motion.div
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
@@ -79,7 +79,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation - Daha Premium */}
-          <div className="hidden lg:flex items-center space-x-0.5 flex-1 justify-center max-w-2xl mx-4">
+          <div className="hidden lg:flex items-center space-x-0.5 flex-1 justify-center max-w-2xl mx-2 min-w-0 overflow-hidden">
             {navItems.map((item, index) => (
               <Link
                 key={item.href}
@@ -102,29 +102,31 @@ export default function Navigation() {
           </div>
 
           {/* Contact Info & CTA - Daha Premium */}
-          <div className="hidden lg:flex items-center space-x-3 flex-shrink-0">
+          <div className="hidden lg:flex items-center space-x-2 flex-shrink-0">
             <motion.a
               href="tel:+41772152255"
-              className="flex items-center space-x-2 text-gray-700 hover:text-accent-600 transition-colors group whitespace-nowrap"
+              className="flex items-center space-x-1.5 text-gray-700 hover:text-accent-600 transition-colors group whitespace-nowrap"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="p-2 bg-gradient-to-br from-accent-50 to-accent-100 rounded-lg group-hover:from-accent-100 group-hover:to-accent-200 transition-all duration-300 shadow-sm group-hover:shadow-md flex-shrink-0">
+              <div className="p-1.5 bg-gradient-to-br from-accent-50 to-accent-100 rounded-lg group-hover:from-accent-100 group-hover:to-accent-200 transition-all duration-300 shadow-sm group-hover:shadow-md">
                 {/* @ts-ignore */}
-                <Phone className="w-4 h-4 text-accent-600" />
+                <Phone className="w-3.5 h-3.5 text-accent-600" />
               </div>
-              <span className="font-bold text-xs">+41 77 215 22 55</span>
+              <span className="font-bold text-xs hidden xl:inline">+41 77 215 22 55</span>
+              <span className="font-bold text-xs xl:hidden">+41 77...</span>
             </motion.a>
             
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-shrink-0">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/booking"
-                className="relative px-5 py-2.5 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 text-white rounded-lg font-bold text-xs shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group whitespace-nowrap"
+                className="relative px-4 py-2 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 text-white rounded-lg font-bold text-xs shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group whitespace-nowrap"
               >
                 <span className="relative z-10 flex items-center">
-                  Devis Gratuit
+                  <span className="hidden xl:inline">Devis Gratuit</span>
+                  <span className="xl:hidden">Devis</span>
                   {/* @ts-ignore */}
-                  <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                  <ArrowRight className="w-3.5 h-3.5 ml-1" />
                 </span>
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600"
