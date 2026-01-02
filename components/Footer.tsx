@@ -18,10 +18,11 @@ export default function Footer() {
   ]
 
   const company = [
-    { name: 'À Propos', href: '#apropos' },
-    { name: 'Contact', href: '#contact' },
-    { name: 'Carrières', href: '#' },
-    { name: 'Blog', href: '#' },
+    { name: 'À Propos', href: '/a-propos' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Politique de Qualité', href: '/politique-de-qualite' },
+    { name: 'Règlement & Sécurité', href: '/reglement-securite' },
   ]
 
   const socialLinks = [

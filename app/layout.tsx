@@ -61,10 +61,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <head>
-        <GoogleAnalytics />
-      </head>
       <body className="antialiased">
+        <GoogleAnalytics />
         {children}
       </body>
     </html>

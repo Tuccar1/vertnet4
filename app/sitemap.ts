@@ -1,9 +1,18 @@
 import { MetadataRoute } from 'next'
-import { getBlogPosts } from '@/lib/blog'
 import { servicesData } from '@/lib/services-data'
 
+// Safe blog posts getter
+function getBlogPosts() {
+  try {
+    const { getBlogPosts } = require('@/lib/blog')
+    return getBlogPosts()
+  } catch (error) {
+    return []
+  }
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.genevenettoyage.ch'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.genevenettoyage.ch'
   
   // Static pages
   const staticPages = [
@@ -11,8 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services',
     '/a-propos',
     '/politique-de-qualite',
+    '/reglement-securite',
     '/contact',
     '/blog',
+    '/booking',
+    '/portfolio',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -31,7 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Blog posts
   const blogPosts = getBlogPosts().map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: post.date ? new Date(post.date) : new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }))

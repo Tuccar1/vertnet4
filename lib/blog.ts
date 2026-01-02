@@ -20,45 +20,64 @@ export interface BlogPost {
 }
 
 export function getBlogPosts(): BlogPost[] {
-  if (!fs.existsSync(postsDirectory)) {
+  try {
+    if (!fs.existsSync(postsDirectory)) {
+      return []
+    }
+
+    const fileNames = fs.readdirSync(postsDirectory)
+    const allPostsData = fileNames
+      .filter((name) => name.endsWith('.md'))
+      .map((fileName) => {
+        try {
+          const slug = fileName.replace(/\.md$/, '')
+          const fullPath = path.join(postsDirectory, fileName)
+          const fileContents = fs.readFileSync(fullPath, 'utf8')
+          const { data, content } = matter(fileContents)
+
+          return {
+            slug,
+            title: data.title || '',
+            date: data.date || new Date().toISOString(),
+            excerpt: data.excerpt || '',
+            content,
+            author: data.author || 'Genève Nettoyage',
+            category: data.category || 'Général',
+            tags: data.tags || [],
+            image: data.image,
+            readingTime: Math.ceil(content.split(' ').length / 200),
+          } as BlogPost
+        } catch (error) {
+          console.error(`Error reading blog post ${fileName}:`, error)
+          return null
+        }
+      })
+      .filter((post): post is BlogPost => post !== null)
+
+    return allPostsData.sort((a, b) => {
+      if (a.date < b.date) {
+        return 1
+      } else {
+        return -1
+      }
+    })
+  } catch (error) {
+    console.error('Error getting blog posts:', error)
     return []
   }
-
-  const fileNames = fs.readdirSync(postsDirectory)
-  const allPostsData = fileNames
-    .filter((name) => name.endsWith('.md'))
-    .map((fileName) => {
-      const slug = fileName.replace(/\.md$/, '')
-      const fullPath = path.join(postsDirectory, fileName)
-      const fileContents = fs.readFileSync(fullPath, 'utf8')
-      const { data, content } = matter(fileContents)
-
-      return {
-        slug,
-        title: data.title || '',
-        date: data.date || '',
-        excerpt: data.excerpt || '',
-        content,
-        author: data.author || 'Genève Nettoyage',
-        category: data.category || 'Général',
-        tags: data.tags || [],
-        image: data.image,
-        readingTime: Math.ceil(content.split(' ').length / 200),
-      } as BlogPost
-    })
-
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1
-    } else {
-      return -1
-    }
-  })
 }
 
 export function getBlogPost(slug: string): BlogPost | null {
   try {
+    if (!fs.existsSync(postsDirectory)) {
+      return null
+    }
+
     const fullPath = path.join(postsDirectory, `${slug}.md`)
+    if (!fs.existsSync(fullPath)) {
+      return null
+    }
+
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
 
@@ -68,7 +87,7 @@ export function getBlogPost(slug: string): BlogPost | null {
     return {
       slug,
       title: data.title || '',
-      date: data.date || '',
+      date: data.date || new Date().toISOString(),
       excerpt: data.excerpt || '',
       content: contentHtml,
       author: data.author || 'Genève Nettoyage',
@@ -78,6 +97,7 @@ export function getBlogPost(slug: string): BlogPost | null {
       readingTime: Math.ceil(content.split(' ').length / 200),
     }
   } catch (error) {
+    console.error(`Error getting blog post ${slug}:`, error)
     return null
   }
 }
