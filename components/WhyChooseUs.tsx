@@ -50,8 +50,8 @@ export default function WhyChooseUs() {
   ]
 
   return (
-    <section id="pourquoi-nous" className="py-20 bg-gradient-to-br from-primary-50/80 to-white/80 backdrop-blur-sm">
-      <div className="container mx-auto px-4">
+    <section id="pourquoi-nous" className="py-20 bg-gradient-to-br from-primary-50/80 to-white/80 backdrop-blur-sm" style={{ width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
+      <div className="container mx-auto px-4" style={{ maxWidth: '100%' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

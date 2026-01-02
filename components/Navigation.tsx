@@ -33,14 +33,15 @@ export default function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 overflow-x-hidden ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? 'bg-primary-50/98 backdrop-blur-xl shadow-lg border-b border-primary-200'
           : 'bg-primary-50/80 backdrop-blur-md'
       }`}
+      style={{ width: '100vw', maxWidth: '100vw' }}
     >
-      <div className="w-full overflow-x-hidden">
-        <div className="flex items-center justify-between h-24 gap-2 px-4 lg:px-6 xl:px-8 max-w-[1920px] mx-auto">
+      <div className="w-full" style={{ maxWidth: '100vw', overflowX: 'hidden' }}>
+        <div className="flex items-center justify-between h-24 gap-2 px-4 lg:px-6 xl:px-8 mx-auto" style={{ maxWidth: '100%' }}>
           {/* Logo - Daha Premium */}
           <Link href="/" className="flex items-center space-x-3 group flex-shrink-0">
             <motion.div
