@@ -67,14 +67,51 @@ export default function RootLayout({
   return (
     <html lang="fr" className="overflow-x-hidden" style={{ width: '100%', maxWidth: '100vw' }}>
       <head>
+        <link rel="stylesheet" href="/critical.css" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                if (window.innerWidth >= 769) {
-                  var style = document.createElement('style');
-                  style.textContent = 'body > div:first-child { transform: scale(0.8) !important; transform-origin: top left !important; width: 125% !important; height: 125% !important; overflow-x: hidden !important; }';
-                  document.head.appendChild(style);
+                function applyScale() {
+                  var rootDiv = document.body ? document.body.querySelector('div:first-child') : null;
+                  if (!rootDiv && document.body) {
+                    var observer = new MutationObserver(function(mutations) {
+                      var div = document.body.querySelector('div:first-child');
+                      if (div) {
+                        observer.disconnect();
+                        applyScaleToDiv(div);
+                      }
+                    });
+                    observer.observe(document.body, { childList: true, subtree: true });
+                    setTimeout(function() { observer.disconnect(); }, 5000);
+                    return;
+                  }
+                  if (rootDiv) {
+                    applyScaleToDiv(rootDiv);
+                  }
+                }
+                function applyScaleToDiv(div) {
+                  if (window.innerWidth >= 769) {
+                    div.style.cssText += 'transform: scale(0.8) !important; transform-origin: top left !important; width: 125% !important; height: 125% !important; overflow-x: hidden !important; position: relative !important; margin: 0 !important; padding: 0 !important;';
+                  } else {
+                    div.style.cssText += 'transform: scale(1) !important; width: 100% !important; height: 100% !important; overflow-x: hidden !important;';
+                  }
+                }
+                if (document.body) {
+                  applyScale();
+                } else {
+                  document.addEventListener('DOMContentLoaded', applyScale);
+                }
+                setTimeout(applyScale, 0);
+                setTimeout(applyScale, 1);
+                setTimeout(applyScale, 5);
+                setTimeout(applyScale, 10);
+                setTimeout(applyScale, 50);
+                setTimeout(applyScale, 100);
+                setTimeout(applyScale, 200);
+                if (window.requestAnimationFrame) {
+                  requestAnimationFrame(applyScale);
+                  requestAnimationFrame(function() { requestAnimationFrame(applyScale); });
                 }
               })();
             `,
