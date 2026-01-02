@@ -28,8 +28,8 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white shadow-md border-b border-gray-100'
-          : 'bg-white/95 backdrop-blur-sm'
+          ? 'bg-silver-100/95 backdrop-blur-xl shadow-md border-b border-silver-200'
+          : 'bg-silver-50/95 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -37,7 +37,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-11 h-11 bg-gradient-to-br from-primary-500 via-accent-400 to-secondary-500 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
+              <div className="w-11 h-11 bg-gradient-to-br from-primary-400 via-accent-400 to-secondary-500 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
             </div>
@@ -45,7 +45,7 @@ export default function Navigation() {
               <span className="text-xl font-display font-bold text-gray-900 leading-tight">
                 Vernetgeneve
               </span>
-              <span className="text-xs text-gray-500 font-medium hidden sm:block">
+              <span className="text-xs text-gray-600 font-medium hidden sm:block">
                 Excellence en Nettoyage
               </span>
             </div>
@@ -57,7 +57,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative px-4 py-2 text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200 rounded-lg hover:bg-gray-50"
+                className="relative px-4 py-2 text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200 rounded-lg hover:bg-primary-50"
               >
                 {item.label}
               </Link>
@@ -68,17 +68,17 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center space-x-4">
             <a
               href="tel:+4123456789"
-              className="flex items-center space-x-2 text-gray-700 hover:text-primary-600 transition-colors group"
+              className="flex items-center space-x-2 text-gray-700 hover:text-accent-600 transition-colors group"
             >
-              <div className="p-2 bg-primary-50 rounded-lg group-hover:bg-primary-100 transition-colors">
-                <Phone className="w-4 h-4 text-primary-600" />
+              <div className="p-2 bg-accent-50 rounded-lg group-hover:bg-accent-100 transition-colors">
+                <Phone className="w-4 h-4 text-accent-600" />
               </div>
               <span className="font-semibold text-sm">+41 XX XXX XX XX</span>
             </a>
             
             <Link
               href="#contact"
-              className="px-5 py-2.5 bg-gradient-to-r from-primary-500 to-accent-500 text-white rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+              className="px-5 py-2.5 bg-gradient-to-r from-primary-500 to-accent-500 text-gray-900 rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
               Devis Gratuit
             </Link>
@@ -86,7 +86,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-gray-700 p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="lg:hidden text-gray-700 p-2 rounded-lg hover:bg-silver-200 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -102,7 +102,7 @@ export default function Navigation() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
-              className="lg:hidden overflow-hidden border-t border-gray-100"
+              className="lg:hidden overflow-hidden border-t border-silver-200"
             >
               <div className="py-4 space-y-1">
                 {navItems.map((item) => (
@@ -115,10 +115,10 @@ export default function Navigation() {
                     {item.label}
                   </Link>
                 ))}
-                <div className="pt-4 mt-4 border-t border-gray-100 space-y-3">
+                <div className="pt-4 mt-4 border-t border-silver-200 space-y-3">
                   <a
                     href="tel:+4123456789"
-                    className="flex items-center space-x-3 px-4 py-3 bg-primary-50 rounded-lg text-primary-600 font-semibold"
+                    className="flex items-center space-x-3 px-4 py-3 bg-accent-50 rounded-lg text-accent-600 font-semibold"
                     onClick={() => setIsOpen(false)}
                   >
                     <Phone className="w-5 h-5" />
@@ -126,7 +126,7 @@ export default function Navigation() {
                   </a>
                   <Link
                     href="#contact"
-                    className="block w-full text-center px-6 py-3 bg-gradient-to-r from-primary-500 to-accent-500 text-white rounded-lg font-semibold shadow-md"
+                    className="block w-full text-center px-6 py-3 bg-gradient-to-r from-primary-500 to-accent-500 text-gray-900 rounded-lg font-semibold shadow-md"
                     onClick={() => setIsOpen(false)}
                   >
                     Devis Gratuit
