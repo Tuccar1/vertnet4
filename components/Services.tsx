@@ -98,22 +98,24 @@ export default function Services() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group"
-            >
-              <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
-              <div className="p-8">
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                  {/* @ts-ignore */}
-                  <service.icon className="w-8 h-8 text-white" />
-                </div>
+          {services.map((service, index) => {
+            const IconComponent = service.icon
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group"
+              >
+                <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
+                <div className="p-8">
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                    {/* @ts-ignore */}
+                    <IconComponent className="w-8 h-8 text-white" />
+                  </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   {service.title}
                 </h3>
@@ -141,7 +143,8 @@ export default function Services() {
                 </Link>
               </div>
             </motion.div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

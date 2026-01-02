@@ -143,18 +143,21 @@ export default function Hero() {
             variants={itemVariants}
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16"
           >
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                className="bg-white/90 backdrop-blur-md rounded-xl p-6 border border-white/30 shadow-xl"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                {/* @ts-ignore */}
-                <feature.icon className={`w-8 h-8 ${feature.color} mx-auto mb-3`} />
-                <p className="text-gray-800 font-semibold">{feature.text}</p>
-              </motion.div>
-            ))}
+            {features.map((feature, index) => {
+              const IconComponent = feature.icon
+              return (
+                <motion.div
+                  key={index}
+                  className="bg-white/90 backdrop-blur-md rounded-xl p-6 border border-white/30 shadow-xl"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  {/* @ts-ignore */}
+                  <IconComponent className={`w-8 h-8 ${feature.color} mx-auto mb-3`} />
+                  <p className="text-gray-800 font-semibold">{feature.text}</p>
+                </motion.div>
+              )
+            })}
           </motion.div>
         </motion.div>
       </div>
