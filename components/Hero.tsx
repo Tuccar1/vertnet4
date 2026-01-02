@@ -67,7 +67,7 @@ export default function Hero() {
   return (
     <section
       id="accueil"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-white"
       style={{ 
         width: '100%', 
         maxWidth: '100%', 
@@ -96,14 +96,14 @@ export default function Hero() {
             className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-[1.2] drop-shadow-2xl tracking-tight"
           >
             Votre Partenaire de{' '}
-            <span className="bg-gradient-to-r from-primary-300 via-secondary-300 to-accent-300 bg-clip-text text-transparent drop-shadow-lg">
+            <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
               Confiance
             </span>
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-white/98 mb-10 leading-[1.7] drop-shadow-lg max-w-2xl mx-auto font-medium"
+            className="text-lg md:text-xl text-gray-700 mb-10 leading-[1.7] max-w-2xl mx-auto font-medium"
           >
             Services de nettoyage professionnel de qualité supérieure pour les
             entreprises et particuliers à Genève. Disponible 24h/24 et 7j/7.
