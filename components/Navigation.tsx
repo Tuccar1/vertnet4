@@ -39,8 +39,8 @@ export default function Navigation() {
           : 'bg-primary-50/80 backdrop-blur-md'
       }`}
     >
-      <div className="container mx-auto px-4 lg:px-6">
-        <div className="flex items-center justify-between h-24">
+      <div className="container mx-auto px-4 lg:px-6 max-w-full">
+        <div className="flex items-center justify-between h-24 gap-4">
           {/* Logo - Daha Premium */}
           <Link href="/" className="flex items-center space-x-3 group">
             <motion.div
@@ -79,12 +79,12 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation - Daha Premium */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-0.5 flex-1 justify-center max-w-2xl mx-4">
             {navItems.map((item, index) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative px-5 py-2.5 text-gray-700 hover:text-primary-600 font-semibold text-sm transition-all duration-300 rounded-lg group"
+                className="relative px-3 py-2 text-gray-700 hover:text-primary-600 font-semibold text-xs transition-all duration-300 rounded-lg group whitespace-nowrap"
               >
                 <span className="relative z-10">{item.label}</span>
                 <motion.span
@@ -102,35 +102,29 @@ export default function Navigation() {
           </div>
 
           {/* Contact Info & CTA - Daha Premium */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-3 flex-shrink-0">
             <motion.a
               href="tel:+41772152255"
-              className="flex items-center space-x-2 text-gray-700 hover:text-accent-600 transition-colors group"
+              className="flex items-center space-x-2 text-gray-700 hover:text-accent-600 transition-colors group whitespace-nowrap"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="p-2.5 bg-gradient-to-br from-accent-50 to-accent-100 rounded-xl group-hover:from-accent-100 group-hover:to-accent-200 transition-all duration-300 shadow-sm group-hover:shadow-md">
+              <div className="p-2 bg-gradient-to-br from-accent-50 to-accent-100 rounded-lg group-hover:from-accent-100 group-hover:to-accent-200 transition-all duration-300 shadow-sm group-hover:shadow-md flex-shrink-0">
                 {/* @ts-ignore */}
                 <Phone className="w-4 h-4 text-accent-600" />
               </div>
-              <span className="font-bold text-sm">+41 77 215 22 55</span>
+              <span className="font-bold text-xs">+41 77 215 22 55</span>
             </motion.a>
             
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-shrink-0">
               <Link
-                href="#contact"
-                className="relative px-6 py-3 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 text-white rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                href="/booking"
+                className="relative px-5 py-2.5 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 text-white rounded-lg font-bold text-xs shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group whitespace-nowrap"
               >
                 <span className="relative z-10 flex items-center">
                   Devis Gratuit
-                  <motion.span
-                    className="ml-2"
-                    animate={{ x: [0, 4, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    {/* @ts-ignore */}
-                    <ArrowRight className="w-4 h-4" />
-                  </motion.span>
+                  {/* @ts-ignore */}
+                  <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                 </span>
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600"
