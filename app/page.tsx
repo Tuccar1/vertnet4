@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <div className="w-full overflow-x-hidden" style={{ maxWidth: '100vw' }}>
+    <div className="w-full overflow-x-hidden" style={{ maxWidth: '100%', width: '100%', overflowX: 'hidden' }}>
       <Navigation />
       <Hero />
       <Services />

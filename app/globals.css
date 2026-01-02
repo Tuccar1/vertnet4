@@ -35,8 +35,22 @@
       transform-origin: top left;
       width: 125%;
       height: 125%;
-      overflow-x: hidden;
+      overflow-x: hidden !important;
       position: relative;
+    }
+    
+    /* Scrollbar gizle ama scroll çalışsın */
+    body::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    body::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    body::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
     }
   }
   
@@ -45,7 +59,7 @@
       transform: scale(1);
       width: 100%;
       height: 100%;
-      overflow-x: hidden;
+      overflow-x: hidden !important;
     }
   }
   
