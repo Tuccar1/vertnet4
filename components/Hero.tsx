@@ -93,7 +93,7 @@ export default function Hero() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-[1.2] drop-shadow-2xl tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 mb-6 leading-[1.2] tracking-tight"
           >
             Votre Partenaire de{' '}
             <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
