@@ -38,7 +38,7 @@ export default function Navigation() {
           ? 'bg-primary-50/98 backdrop-blur-xl shadow-lg border-b border-primary-200'
           : 'bg-primary-50/80 backdrop-blur-md'
       }`}
-      style={{ width: '100vw', maxWidth: '100vw', left: 0, right: 0, overflowX: 'hidden' }}
+      style={{ width: '100%', maxWidth: '100%', left: 0, right: 0, overflowX: 'hidden', position: 'fixed' }}
     >
       <div className="w-full" style={{ maxWidth: '100%', overflowX: 'hidden', width: '100%' }}>
         <div className="flex items-center justify-between h-24 gap-2 px-4 lg:px-6 xl:px-8 mx-auto" style={{ maxWidth: '100%', width: '100%', overflowX: 'hidden' }}>

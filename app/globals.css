@@ -30,12 +30,31 @@
 
   /* Ana container için scale uygula - sadece desktop */
   @media (min-width: 769px) {
+    html {
+      overflow-x: hidden;
+      width: 100vw;
+      max-width: 100vw;
+    }
+    
+    body {
+      overflow-x: hidden;
+      width: 100vw;
+      max-width: 100vw;
+    }
+    
     body > div:first-child {
       transform: scale(0.8);
       transform-origin: top left;
       width: 125%;
       height: 125%;
       overflow-x: hidden !important;
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Tüm section'ları scale içine al */
+    body > div:first-child > * {
       position: relative;
     }
     
