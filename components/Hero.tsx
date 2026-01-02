@@ -119,7 +119,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-20" style={{ maxWidth: '100%', overflowX: 'hidden' }}>
+      <div className="container mx-auto px-4 relative z-20" style={{ maxWidth: '100%', width: '100%' }}>
         <motion.div
           variants={containerVariants}
           initial="hidden"

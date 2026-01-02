@@ -61,13 +61,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className="overflow-x-hidden">
-      <body className="antialiased overflow-x-hidden">
+    <html lang="fr" className="overflow-x-hidden" style={{ width: '100%', maxWidth: '100vw' }}>
+      <body className="antialiased overflow-x-hidden" style={{ width: '100%', maxWidth: '100vw' }}>
         <GoogleAnalytics />
         <RouteProgressBar />
-        <div className="w-full overflow-x-hidden">
-          {children}
-        </div>
+        {children}
       </body>
     </html>
   )

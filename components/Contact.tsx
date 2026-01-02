@@ -2,8 +2,8 @@
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-600 to-indigo-800 text-white" style={{ width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
-      <div className="container mx-auto px-4" style={{ maxWidth: '100%' }}>
+    <section id="contact" className="py-20 bg-gradient-to-br from-blue-600 to-indigo-800 text-white" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
+      <div className="container mx-auto px-4" style={{ maxWidth: '100%', width: '100%' }}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-[1.25]">

@@ -8,10 +8,8 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    max-width: 100vw;
     width: 100%;
-    height: 100%;
-    /* Sayfayı %80 boyutunda göster - sadece içerik için */
+    max-width: 100vw;
   }
   
   * {
