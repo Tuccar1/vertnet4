@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Sparkles, Shield, Clock } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Hero() {
   const containerVariants = {
@@ -35,17 +36,26 @@ export default function Hero() {
   return (
     <section
       id="accueil"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-silver-100 via-silver-50 to-silver-200"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Animated Background Pattern */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)',
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-silver-900/80 via-silver-800/70 to-silver-900/80"></div>
+        </div>
+        {/* Overlay Pattern */}
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
       </div>
 
       {/* Floating Shapes - Mavi, Yeşil, Sarı */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden z-10">
         <motion.div
-          className="absolute top-20 left-10 w-72 h-72 bg-accent-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute top-20 left-10 w-72 h-72 bg-accent-300 rounded-full mix-blend-multiply filter blur-xl opacity-15"
           animate={{
             y: [0, -20, 0],
             x: [0, 10, 0],
@@ -57,7 +67,7 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="absolute top-40 right-10 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute top-40 right-10 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl opacity-15"
           animate={{
             y: [0, 20, 0],
             x: [0, -10, 0],
@@ -69,7 +79,7 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 left-1/2 w-72 h-72 bg-secondary-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute bottom-20 left-1/2 w-72 h-72 bg-secondary-300 rounded-full mix-blend-multiply filter blur-xl opacity-15"
           animate={{
             y: [0, -15, 0],
           }}
@@ -82,7 +92,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-20">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -90,22 +100,24 @@ export default function Hero() {
           className="max-w-4xl mx-auto text-center"
         >
           <motion.div variants={itemVariants}>
-            <span className="inline-block px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-gray-800 text-sm font-semibold mb-6 shadow-md border border-silver-200">
+            <span className="inline-block px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-gray-800 text-sm font-semibold mb-6 shadow-lg border border-silver-200">
               Excellence en Nettoyage Professionnel
             </span>
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
-            className="text-5xl md:text-7xl font-display font-bold text-gray-900 mb-6 leading-tight"
+            className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight drop-shadow-lg"
           >
             Votre Partenaire de{' '}
-            <span className="gradient-text-secondary">Confiance</span>
+            <span className="gradient-text-secondary bg-gradient-to-r from-secondary-400 to-secondary-500 bg-clip-text text-transparent">
+              Confiance
+            </span>
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed"
+            className="text-xl md:text-2xl text-white/95 mb-8 leading-relaxed drop-shadow-md"
           >
             Services de nettoyage professionnel de qualité supérieure pour les
             entreprises et particuliers à Genève et en Suisse
@@ -121,7 +133,7 @@ export default function Hero() {
             </Link>
             <Link
               href="#services"
-              className="btn-outline text-lg border-primary-500 text-primary-600 hover:bg-primary-500 hover:text-gray-900"
+              className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 backdrop-blur-sm"
             >
               Nos Services
             </Link>
@@ -135,7 +147,7 @@ export default function Hero() {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="bg-white/80 backdrop-blur-md rounded-xl p-6 border border-silver-200 shadow-lg"
+                className="bg-white/90 backdrop-blur-md rounded-xl p-6 border border-white/30 shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
@@ -149,11 +161,11 @@ export default function Hero() {
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+        <div className="w-6 h-10 border-2 border-white/70 rounded-full flex justify-center backdrop-blur-sm">
           <motion.div
             className="w-1 h-3 bg-primary-500 rounded-full mt-2"
             animate={{ y: [0, 12, 0] }}
