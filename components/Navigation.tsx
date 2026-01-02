@@ -39,7 +39,7 @@ export default function Navigation() {
       }`}
       >
       <div className="w-full overflow-x-hidden">
-        <div className="flex items-center justify-between h-20 gap-2 px-4 lg:px-6 xl:px-8 mx-auto w-full overflow-x-hidden">
+        <div className="flex items-center justify-between h-24 gap-2 px-4 lg:px-6 xl:px-8 mx-auto w-full overflow-x-hidden">
           {/* Logo - Daha Premium */}
           <Link href="/" className="flex items-center space-x-3 group flex-shrink-0">
             <motion.div
