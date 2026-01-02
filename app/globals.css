@@ -65,6 +65,14 @@
       padding: 0 !important;
     }
     
+    /* SEO hidden content'i scale'dan muaf tut */
+    .seo-hidden-content {
+      transform: none !important;
+      transform-origin: unset !important;
+      width: 1px !important;
+      height: 1px !important;
+    }
+    
     /* Tüm section'ları scale içine al */
     body > div:first-child > * {
       position: relative;
