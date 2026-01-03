@@ -69,7 +69,14 @@ export default function Hero() {
       id="accueil"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 bg-white w-full overflow-x-hidden"
     >
-
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          alt="Nettoyage professionnel à Genève"
+          className="w-full h-full object-cover opacity-10"
+        />
+      </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-20">

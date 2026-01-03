@@ -73,6 +73,14 @@ export default function WhyChooseUs() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {reasons.map((reason, index) => {
             const IconComponent = reason.icon
+            const reasonImages = [
+              'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // 24/7
+              'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Satisfaction
+              'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Environnement
+              'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Experts
+              'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Technologie
+              'https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Qualité
+            ]
             return (
               <motion.div
                 key={index}
@@ -81,19 +89,28 @@ export default function WhyChooseUs() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className={`${reason.bgColor} rounded-xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300`}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
               >
-                <div className={`w-14 h-14 md:w-16 md:h-16 rounded-xl ${reason.bgColor} flex items-center justify-center mb-6`}>
-                  {/* @ts-ignore */}
-                  <IconComponent className={`w-7 h-7 md:w-8 md:h-8 ${reason.color}`} />
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={reasonImages[index]}
+                    alt={reason.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 leading-[1.3]">
-                {reason.title}
-              </h3>
-              <p className="text-base text-gray-600 leading-[1.7]">
-                {reason.description}
-              </p>
-            </motion.div>
+                <div className="p-6 md:p-8">
+                  <div className={`w-14 h-14 md:w-16 md:h-16 rounded-xl ${reason.bgColor} flex items-center justify-center mb-6 -mt-8 relative z-10`}>
+                    {/* @ts-ignore */}
+                    <IconComponent className={`w-7 h-7 md:w-8 md:h-8 ${reason.color}`} />
+                  </div>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 leading-[1.3]">
+                  {reason.title}
+                </h3>
+                <p className="text-base text-gray-600 leading-[1.7]">
+                  {reason.description}
+                </p>
+              </div>
+              </motion.div>
             )
           })}
         </div>
