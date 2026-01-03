@@ -12,7 +12,7 @@ function getBlogPosts() {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.genevenettoyage.ch'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vertnetgeneve.ch'
   
   // Static pages
   const staticPages = [

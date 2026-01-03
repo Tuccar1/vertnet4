@@ -41,7 +41,7 @@ export function getBlogPosts(): BlogPost[] {
             date: data.date || new Date().toISOString(),
             excerpt: data.excerpt || '',
             content,
-            author: data.author || 'Genève Nettoyage',
+            author: data.author || 'Vertnetgeneve',
             category: data.category || 'Général',
             tags: data.tags || [],
             image: data.image,

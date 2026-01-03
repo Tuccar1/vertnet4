@@ -6,15 +6,15 @@ import { Suspense } from 'react'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Genève Nettoyage - Excellence en Nettoyage Professionnel',
-    template: '%s | Genève Nettoyage',
+    default: 'Vertnetgeneve - Excellence en Nettoyage Professionnel',
+    template: '%s | Vertnetgeneve',
   },
   description: 'Services de nettoyage professionnel de qualité supérieure à Genève. Disponible 24h/24 et 7j/7. Canapés, Fin de Bail, Fin de Chantier, Conciergerie, Immeubles, Bureaux, Toiture, Vitres, Façade.',
   keywords: 'nettoyage, Genève, Suisse, nettoyage professionnel, nettoyage commercial, nettoyage résidentiel',
   authors: [{ name: 'Vernetgeneve' }],
-  creator: 'Genève Nettoyage',
-  publisher: 'Genève Nettoyage',
-  metadataBase: new URL('https://www.genevenettoyage.ch'),
+  creator: 'Vertnetgeneve',
+  publisher: 'Vertnetgeneve',
+  metadataBase: new URL('https://www.vertnetgeneve.ch'),
   alternates: {
     canonical: '/',
   },
@@ -25,22 +25,22 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'fr_CH',
-    url: 'https://www.genevenettoyage.ch',
-    siteName: 'Genève Nettoyage',
-    title: 'Genève Nettoyage - Excellence en Nettoyage Professionnel',
+    url: 'https://www.vertnetgeneve.ch',
+    siteName: 'Vertnetgeneve',
+    title: 'Vertnetgeneve - Excellence en Nettoyage Professionnel',
     description: 'Services de nettoyage professionnel de qualité supérieure à Genève',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Genève Nettoyage',
+        alt: 'Vertnetgeneve',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Genève Nettoyage - Excellence en Nettoyage Professionnel',
+    title: 'Vertnetgeneve - Excellence en Nettoyage Professionnel',
     description: 'Services de nettoyage professionnel de qualité supérieure à Genève',
     images: ['/og-image.jpg'],
   },

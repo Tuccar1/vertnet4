@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 import QualityPolicy from '@/components/QualityPolicy'
 
 export const metadata = {
-  title: 'Politique de Qualité - Genève Nettoyage',
+  title: 'Politique de Qualité - Vertnetgeneve',
   description: 'Notre engagement envers la qualité, la durabilité et la satisfaction client à 100%.',
 }
 

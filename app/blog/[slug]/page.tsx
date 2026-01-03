@@ -16,12 +16,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   
   if (!post) {
     return {
-      title: 'Article Non Trouvé - Genève Nettoyage',
+      title: 'Article Non Trouvé - Vertnetgeneve',
     }
   }
 
   return {
-    title: `${post.title} - Genève Nettoyage Blog`,
+    title: `${post.title} - Vertnetgeneve Blog`,
     description: post.excerpt,
   }
 }

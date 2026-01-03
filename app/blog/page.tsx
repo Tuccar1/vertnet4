@@ -4,7 +4,7 @@ import BlogList from '@/components/BlogList'
 import { getBlogPosts } from '@/lib/blog'
 
 export const metadata = {
-  title: 'Blog - Genève Nettoyage',
+  title: 'Blog - Vertnetgeneve',
   description: 'Découvrez nos articles sur le nettoyage professionnel, les conseils d\'entretien et les dernières actualités.',
 }
 

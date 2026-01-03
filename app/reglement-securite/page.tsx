@@ -3,8 +3,8 @@ import Footer from '@/components/Footer'
 import ReglementSecurite from '@/components/ReglementSecurite'
 
 export const metadata = {
-  title: 'Règlement & Sécurité - Genève Nettoyage',
-  description: 'Conformité légale complète, sécurité du personnel et engagement environnemental. Genève Nettoyage opère en stricte conformité avec le cadre légal suisse.',
+  title: 'Règlement & Sécurité - Vertnetgeneve',
+  description: 'Conformité légale complète, sécurité du personnel et engagement environnemental. Vertnetgeneve opère en stricte conformité avec le cadre légal suisse.',
 }
 
 export default function ReglementSecuritePage() {

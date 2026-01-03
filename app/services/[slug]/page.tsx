@@ -15,12 +15,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   
   if (!service) {
     return {
-      title: 'Service Non Trouvé - Genève Nettoyage',
+      title: 'Service Non Trouvé - Vertnetgeneve',
     }
   }
 
   return {
-    title: `${service.title} - Genève Nettoyage`,
+    title: `${service.title} - Vertnetgeneve`,
     description: service.description,
   }
 }

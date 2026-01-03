@@ -144,7 +144,7 @@ export default function ReglementSecurite() {
                 Conformité Légale Complète
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Chez Genève Nettoyage, nous opérons en stricte conformité avec le cadre légal suisse, particulièrement concernant les réglementations de sécurité au travail et les directives du Secrétariat d'État à l'économie (SECO).
+                Chez Vertnetgeneve, nous opérons en stricte conformité avec le cadre légal suisse, particulièrement concernant les réglementations de sécurité au travail et les directives du Secrétariat d'État à l'économie (SECO).
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Choisir nos services, c'est opter pour la sérénité, la professionnalisation et le respect des personnes et de la loi.

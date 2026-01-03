@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 import PortfolioGallery from '@/components/PortfolioGallery'
 
 export const metadata = {
-  title: 'Portfolio - Genève Nettoyage',
+  title: 'Portfolio - Vertnetgeneve',
   description: 'Découvrez nos réalisations et témoignages clients.',
 }
 

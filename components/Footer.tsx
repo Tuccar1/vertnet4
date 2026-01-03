@@ -56,7 +56,7 @@ export default function Footer() {
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl md:text-2xl font-display font-bold text-white leading-[1.2]">Genève Nettoyage</h3>
+                  <h3 className="text-xl md:text-2xl font-display font-bold text-white leading-[1.2]">Vertnetgeneve</h3>
                   <p className="text-xs md:text-sm text-gray-400 leading-[1.4]">Excellence Professionnelle</p>
                 </div>
               </Link>
@@ -160,14 +160,14 @@ export default function Footer() {
                   <span className="font-semibold">+41 77 215 22 55</span>
                 </a>
                 <a
-                  href="mailto:info@genevenettoyage.ch"
+                  href="mailto:info@vertnetgeneve.ch"
                   className="flex items-center space-x-3 text-sm md:text-base text-gray-400 hover:text-white transition-colors group leading-[1.7]"
                 >
                   <div className="p-2 bg-primary-500/20 rounded-lg group-hover:bg-primary-500/30 transition-colors flex-shrink-0">
                     {/* @ts-ignore */}
                     <Mail className="w-4 h-4 text-primary-400" />
                   </div>
-                  <span>info@genevenettoyage.ch</span>
+                  <span>info@vertnetgeneve.ch</span>
                 </a>
                 <div className="flex items-start space-x-3 text-sm md:text-base text-gray-400 leading-[1.7]">
                   <div className="p-2 bg-secondary-500/20 rounded-lg mt-0.5 flex-shrink-0">
@@ -208,7 +208,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm md:text-base text-gray-500 text-center md:text-left leading-[1.7]">
-              &copy; {new Date().getFullYear()} Genève Nettoyage. Tous droits réservés.
+              &copy; {new Date().getFullYear()} Vertnetgeneve. Tous droits réservés.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm md:text-base text-gray-300 leading-[1.7]">
               <Link href="#" className="hover:text-white transition-colors leading-[1.7] font-medium">

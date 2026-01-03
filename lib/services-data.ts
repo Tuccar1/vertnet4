@@ -66,7 +66,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     title: 'Fin de Bail',
     tagline: 'Pour un Déménagement Sans Soucis !',
     category: 'residential',
-    description: 'Nous prenons en charge le stress du nettoyage avant et après votre déménagement ! Genève Nettoyage est là pour répondre à tous vos besoins de nettoyage avec une attention méticuleuse aux détails.',
+    description: 'Nous prenons en charge le stress du nettoyage avant et après votre déménagement ! Vertnetgeneve est là pour répondre à tous vos besoins de nettoyage avec une attention méticuleuse aux détails.',
     benefits: [
       'Conformité garantie pour votre départ',
       'Hygiène et santé prioritaires',

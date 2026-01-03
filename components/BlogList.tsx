@@ -27,7 +27,7 @@ export default function BlogList({ posts }: BlogListProps) {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 mb-6 leading-[1.2]">
-              Genève Nettoyage Blog
+              Vertnetgeneve Blog
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-[1.7]">
               Science et Pratique du Nettoyage

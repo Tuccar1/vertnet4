@@ -138,7 +138,7 @@ export default function QualityPolicy() {
             </h2>
             <div className="bg-white rounded-2xl p-10 shadow-xl border-4 border-primary-200">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Chez Genève Nettoyage, nous ne sommes pas seulement un prestataire de services de nettoyage—nous sommes votre partenaire de confiance pour maintenir un environnement propre, sain et durable. Notre mission est non seulement de répondre à vos attentes, mais de les dépasser à chaque visite.
+                Chez Vertnetgeneve, nous ne sommes pas seulement un prestataire de services de nettoyage—nous sommes votre partenaire de confiance pour maintenir un environnement propre, sain et durable. Notre mission est non seulement de répondre à vos attentes, mais de les dépasser à chaque visite.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Nous nous engageons à fournir des services de la plus haute qualité tout en respectant l'environnement et en garantissant votre satisfaction totale. Chaque intervention est effectuée avec professionnalisme, attention aux détails et respect de nos valeurs fondamentales.

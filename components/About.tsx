@@ -83,7 +83,7 @@ export default function About() {
               L'excellence dans les Services de Nettoyage
             </h3>
             <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto leading-[1.7]">
-              Chez Genève Nettoyage, nous ne sommes pas seulement un prestataire de services de nettoyage—nous sommes votre partenaire de confiance pour maintenir un environnement propre, sain et durable. Notre mission est non seulement de répondre à vos attentes, mais de les dépasser à chaque visite.
+              Chez Vertnetgeneve, nous ne sommes pas seulement un prestataire de services de nettoyage—nous sommes votre partenaire de confiance pour maintenir un environnement propre, sain et durable. Notre mission est non seulement de répondre à vos attentes, mais de les dépasser à chaque visite.
             </p>
           </motion.div>
 

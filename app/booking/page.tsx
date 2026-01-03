@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 import BookingForm from '@/components/BookingForm'
 
 export const metadata = {
-  title: 'Réserver un Service - Genève Nettoyage',
+  title: 'Réserver un Service - Vertnetgeneve',
   description: 'Réservez votre service de nettoyage en ligne. Disponible 24h/24 et 7j/7.',
 }
 

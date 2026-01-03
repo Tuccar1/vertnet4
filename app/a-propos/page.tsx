@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 import AboutPage from '@/components/AboutPage'
 
 export const metadata = {
-  title: 'À Propos - Genève Nettoyage',
+  title: 'À Propos - Vertnetgeneve',
   description: 'Découvrez notre entreprise, notre mission, notre vision et nos valeurs. Excellence en nettoyage professionnel à Genève.',
 }
 

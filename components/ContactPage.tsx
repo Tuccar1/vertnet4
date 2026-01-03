@@ -70,8 +70,8 @@ export default function ContactPage() {
                     <Mail className="w-4 h-4 text-primary-600 mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-bold text-gray-900 mb-1 text-sm">Email</h4>
-                      <a href="mailto:info@genevenettoyage.ch" className="text-gray-600 hover:text-primary-600 transition text-sm">
-                        info@genevenettoyage.ch
+                      <a href="mailto:info@vertnetgeneve.ch" className="text-gray-600 hover:text-primary-600 transition text-sm">
+                        info@vertnetgeneve.ch
                       </a>
                     </div>
                   </div>
@@ -81,8 +81,8 @@ export default function ContactPage() {
                     <Globe className="w-4 h-4 text-primary-600 mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-bold text-gray-900 mb-1 text-sm">Website</h4>
-                      <a href="https://www.genevenettoyage.ch" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary-600 transition text-sm">
-                        www.genevenettoyage.ch
+                      <a href="https://www.vertnetgeneve.ch" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary-600 transition text-sm">
+                        www.vertnetgeneve.ch
                       </a>
                     </div>
                   </div>

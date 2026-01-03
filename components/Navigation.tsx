@@ -69,7 +69,7 @@ export default function Navigation() {
             </motion.div>
             <div className="flex flex-col">
               <span className="text-xl md:text-2xl font-display font-bold text-gray-900 leading-tight tracking-tight">
-                Genève Nettoyage
+                Vertnetgeneve
               </span>
               <span className="text-sm md:text-base text-gray-500 font-medium hidden sm:block tracking-wide leading-tight">
                 Excellence en Nettoyage Professionnel

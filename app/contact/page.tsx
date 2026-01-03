@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 import ContactPage from '@/components/ContactPage'
 
 export const metadata = {
-  title: 'Contact - Genève Nettoyage',
+  title: 'Contact - Vertnetgeneve',
   description: 'Contactez-nous pour un devis gratuit. Disponible 24h/24 et 7j/7 à Genève et environs.',
 }
 

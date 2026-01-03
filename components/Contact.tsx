@@ -21,15 +21,15 @@ export default function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      content: 'info@genevenettoyage.ch',
-      link: 'mailto:info@genevenettoyage.ch',
+      content: 'info@vertnetgeneve.ch',
+      link: 'mailto:info@vertnetgeneve.ch',
       color: 'text-primary-600',
     },
     {
       icon: Globe,
       title: 'Website',
-      content: 'www.genevenettoyage.ch',
-      link: 'https://www.genevenettoyage.ch',
+      content: 'www.vertnetgeneve.ch',
+      link: 'https://www.vertnetgeneve.ch',
       color: 'text-primary-600',
     },
     {
