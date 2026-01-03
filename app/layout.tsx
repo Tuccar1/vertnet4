@@ -152,9 +152,7 @@ export default function RootLayout({
             visibility: 'hidden',
             zIndex: -9999,
             margin: 0,
-            padding: 0,
-            transform: 'none',
-            transformOrigin: 'unset'
+            padding: 0
           }}
         >
           <h1>Nettoyage Genève - Services de nettoyage professionnel à Genève</h1>
