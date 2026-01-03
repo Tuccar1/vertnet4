@@ -7,7 +7,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen pt-28">
       {/* Hero Section */}
-      <section className="relative py-16 bg-primary-600 text-white overflow-hidden">
+      <section className="relative py-16 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -149,7 +149,7 @@ export default function ContactPage() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-primary-600 text-white px-6 py-2.5 rounded-lg font-semibold text-sm hover:bg-primary-700 transition shadow-lg hover:shadow-xl"
+                    className="w-full bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-6 py-2.5 rounded-lg font-semibold text-sm hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition shadow-lg hover:shadow-xl"
                   >
                     Envoyer la Demande
                   </button>

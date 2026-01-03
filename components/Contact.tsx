@@ -132,7 +132,7 @@ export default function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-primary-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-primary-700 transition shadow-lg hover:shadow-xl text-sm leading-[1.5]"
+                  className="w-full bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition shadow-lg hover:shadow-xl text-sm leading-[1.5]"
                 >
                   Envoyer la Demande
                 </button>
