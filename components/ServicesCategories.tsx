@@ -14,10 +14,10 @@ const categories = [
     borderColor: 'border-primary-400',
     image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', // Residential cleaning
     services: [
-      { name: 'Canapés et Matelas', slug: 'canapes-et-matelas', description: 'Nettoyage professionnel de canapés et matelas', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' },
-      { name: 'Fin de Bail', slug: 'fin-de-bail', description: 'Nettoyage complet pour fin de bail', image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' },
-      { name: 'Fin de Chantier', slug: 'fin-de-chantier', description: 'Nettoyage après travaux', image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' },
-      { name: 'Immeubles', slug: 'immeubles', description: 'Nettoyage d\'appartements et résidences', image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' },
+      { name: 'Canapés et Matelas', slug: 'canapes-et-matelas', description: 'Nettoyage professionnel de canapés et matelas', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' }, // Sofa cleaning
+      { name: 'Fin de Bail', slug: 'fin-de-bail', description: 'Nettoyage complet pour fin de bail', image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' }, // Empty apartment cleaning
+      { name: 'Fin de Chantier', slug: 'fin-de-chantier', description: 'Nettoyage après travaux', image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' }, // Construction cleanup
+      { name: 'Immeubles', slug: 'immeubles', description: 'Nettoyage d\'appartements et résidences', image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' }, // Residential building
     ],
   },
   {
@@ -29,8 +29,8 @@ const categories = [
     borderColor: 'border-secondary-400',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', // Office cleaning
     services: [
-      { name: 'Bureaux', slug: 'bureaux', description: 'Nettoyage de bureaux professionnels', image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' },
-      { name: 'Conciergerie', slug: 'conciergerie', description: 'Services de conciergerie d\'entreprise', image: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' },
+      { name: 'Bureaux', slug: 'bureaux', description: 'Nettoyage de bureaux professionnels', image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' }, // Office cleaning
+      { name: 'Conciergerie', slug: 'conciergerie', description: 'Services de conciergerie d\'entreprise', image: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' }, // Concierge service
     ],
   },
   {
@@ -42,9 +42,9 @@ const categories = [
     borderColor: 'border-accent-400',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', // High-rise cleaning
     services: [
-      { name: 'Toiture', slug: 'toiture', description: 'Nettoyage de toiture jusqu\'à 60m', image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' },
-      { name: 'Vitres', slug: 'vitres', description: 'Nettoyage de vitres jusqu\'à 60m', image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' },
-      { name: 'Façade', slug: 'facade', description: 'Nettoyage de façade jusqu\'à 60m', image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' },
+      { name: 'Toiture', slug: 'toiture', description: 'Nettoyage de toiture jusqu\'à 60m', image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' }, // Roof cleaning
+      { name: 'Vitres', slug: 'vitres', description: 'Nettoyage de vitres jusqu\'à 60m', image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' }, // Window cleaning high-rise
+      { name: 'Façade', slug: 'facade', description: 'Nettoyage de façade jusqu\'à 60m', image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' }, // Facade cleaning
     ],
   },
 ]

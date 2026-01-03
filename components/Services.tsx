@@ -20,7 +20,7 @@ const services: Service[] = [
     description: 'Nous offrons un nettoyage professionnel de canapés et fauteuils, pour leur redonner propreté, fraîcheur et éclat tout en respectant les matériaux.',
     href: '/services/canapes-et-matelas',
     color: 'from-primary-500 to-primary-600',
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', // Sofa cleaning
+    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', // Sofa/mattress cleaning
   },
   {
     icon: Home,
@@ -28,7 +28,7 @@ const services: Service[] = [
     description: 'Nous proposons un service de nettoyage pour fin de bail, garantissant propreté et conformité pour un départ en toute sérénité.',
     href: '/services/fin-de-bail',
     color: 'from-secondary-500 to-secondary-600',
-    image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', // Moving out cleaning
+    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', // Empty apartment cleaning
   },
   {
     icon: Wrench,
@@ -52,7 +52,7 @@ const services: Service[] = [
     description: 'Des services de nettoyage pour votre maison, votre appartement et votre immeuble, afin de garantir des espaces propres, confortables et bien entretenus.',
     href: '/services/immeubles',
     color: 'from-secondary-500 to-accent-500',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', // Apartment cleaning
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', // Residential building cleaning
   },
   {
     icon: Briefcase,
@@ -76,7 +76,7 @@ const services: Service[] = [
     description: 'Des services de nettoyage pour vos vitres, garantissant une clarté parfaite et une vue dégagée.',
     href: '/services/vitres',
     color: 'from-accent-500 to-secondary-600',
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', // Window cleaning
+    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', // Window cleaning high-rise
   },
   {
     icon: Building2,
