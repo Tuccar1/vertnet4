@@ -129,25 +129,25 @@ export default function Services() {
                          />
                          <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.color}`}></div>
                        </div>
-                       <div className="p-5 md:p-6">
-                         <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform mx-auto`}>
+                       <div className="p-4 sm:p-5 md:p-6">
+                         <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform mx-auto`}>
                            {/* @ts-ignore */}
-                           <IconComponent className="w-6 h-6 text-white" />
+                           <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                          </div>
-                       <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 leading-[1.3] text-center">
+                       <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-[1.3] text-center">
                          {service.title}
                        </h3>
-                       <p className="text-sm text-gray-600 leading-[1.7] mb-4 text-center">
+                       <p className="text-xs sm:text-sm text-gray-600 leading-[1.7] mb-3 sm:mb-4 text-center">
                          {service.description}
                        </p>
                               <Link
                                 href={service.href}
                                 prefetch={true}
-                                className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors group/link text-sm leading-[1.5] mx-auto justify-center w-full"
+                                className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors group/link text-xs sm:text-sm leading-[1.5] mx-auto justify-center w-full"
                               >
                          En Savoir Plus
                          <svg
-                           className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform flex-shrink-0"
+                           className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1.5 sm:ml-2 group-hover/link:translate-x-1 transition-transform flex-shrink-0"
                            fill="none"
                            stroke="currentColor"
                            viewBox="0 0 24 24"

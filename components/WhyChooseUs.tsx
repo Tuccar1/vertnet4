@@ -91,7 +91,7 @@ export default function WhyChooseUs() {
                 whileHover={{ scale: 1.05 }}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 max-w-sm mx-auto"
               >
-                <div className="relative h-28 overflow-hidden">
+                <div className="relative h-20 sm:h-24 md:h-28 overflow-hidden">
                   <img
                     src={reasonImages[index]}
                     alt={reason.title}

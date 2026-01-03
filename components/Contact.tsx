@@ -99,9 +99,9 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-xl p-5 md:p-6">
-              <h3 className="text-lg md:text-xl font-bold mb-6 leading-[1.3] text-gray-900">Demander un Devis</h3>
-              <form className="space-y-5">
+            <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-5 md:p-6">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold mb-4 sm:mb-6 leading-[1.3] text-gray-900">Demander un Devis</h3>
+              <form className="space-y-3 sm:space-y-4 md:space-y-5">
                 <div>
                   <input
                     type="text"
