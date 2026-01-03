@@ -74,10 +74,10 @@ export default function Hero() {
         <img
           src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
           alt="Nettoyage professionnel à Genève - Service de nettoyage avec gants bleus et spray"
-          className="w-full h-full object-cover opacity-15"
+          className="w-full h-full object-cover opacity-50"
         />
-        {/* Gradient Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white/70"></div>
+        {/* Gradient Overlay for better text readability - Daha hafif */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/30 to-white/40"></div>
       </div>
 
       {/* Content */}
