@@ -147,7 +147,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased overflow-x-hidden" style={{ width: '100%', maxWidth: '100vw' }}>
+      <body className="antialiased overflow-x-hidden" style={{ width: '100%', maxWidth: '100vw', minHeight: 'auto', height: 'auto' }}>
         {/* SEO: Genève yerleşim yerleri - görünmez ama Google'da çıkacak */}
         <div 
           className="seo-hidden-content"
