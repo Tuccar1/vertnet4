@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [servicesHover, setServicesHover] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,12 +20,39 @@ export default function Navigation() {
 
   const navItems = [
     { href: '/', label: 'Accueil' },
-    { href: '/services', label: 'Services' },
+    { href: '/services', label: 'Services', hasDropdown: true },
     { href: '/a-propos', label: 'À Propos' },
     { href: '/blog', label: 'Blog' },
     { href: '/politique-de-qualite', label: 'Qualité' },
     { href: '/reglement-securite', label: 'Règlement' },
     { href: '/contact', label: 'Contact' },
+  ]
+
+  const servicesCategories = [
+    {
+      title: 'Services Résidentiels',
+      services: [
+        { name: 'Canapés et Matelas', slug: 'canapes-et-matelas' },
+        { name: 'Fin de Bail', slug: 'fin-de-bail' },
+        { name: 'Fin de Chantier', slug: 'fin-de-chantier' },
+        { name: 'Immeubles', slug: 'immeubles' },
+      ],
+    },
+    {
+      title: 'Services Commerciaux',
+      services: [
+        { name: 'Bureaux', slug: 'bureaux' },
+        { name: 'Conciergerie', slug: 'conciergerie' },
+      ],
+    },
+    {
+      title: 'Services Spécialisés',
+      services: [
+        { name: 'Toiture', slug: 'toiture' },
+        { name: 'Vitres', slug: 'vitres' },
+        { name: 'Façade', slug: 'facade' },
+      ],
+    },
   ]
 
   return (
@@ -80,24 +108,85 @@ export default function Navigation() {
           {/* Desktop Navigation - Daha Premium */}
           <div className="hidden lg:flex items-center space-x-0.5 flex-1 justify-center max-w-2xl mx-2 min-w-0 overflow-hidden">
             {navItems.map((item, index) => (
-              <Link
+              <div
                 key={item.href}
-                href={item.href}
-                prefetch={true}
-                className="relative px-2.5 sm:px-3 py-2 sm:py-2.5 text-gray-700 hover:text-primary-600 font-semibold text-sm sm:text-base transition-all duration-300 rounded-lg group whitespace-nowrap leading-tight"
+                className="relative"
+                onMouseEnter={() => item.hasDropdown && setServicesHover(true)}
+                onMouseLeave={() => item.hasDropdown && setServicesHover(false)}
               >
-                <span className="relative z-10">{item.label}</span>
-                <motion.span
-                  className="absolute inset-0 bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg opacity-0 group-hover:opacity-100"
-                  transition={{ duration: 0.3 }}
-                />
-                <motion.span
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </Link>
+                <Link
+                  href={item.href}
+                  prefetch={true}
+                  className="relative px-2.5 sm:px-3 py-2 sm:py-2.5 text-gray-700 hover:text-primary-600 font-semibold text-sm sm:text-base transition-all duration-300 rounded-lg group whitespace-nowrap leading-tight block"
+                >
+                  <span className="relative z-10">{item.label}</span>
+                  <motion.span
+                    className="absolute inset-0 bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg opacity-0 group-hover:opacity-100"
+                    transition={{ duration: 0.3 }}
+                  />
+                  <motion.span
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </Link>
+                
+                {/* Services Dropdown Menu */}
+                {item.hasDropdown && (
+                  <AnimatePresence>
+                    {servicesHover && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[600px] bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden z-[60]"
+                        onMouseEnter={() => setServicesHover(true)}
+                        onMouseLeave={() => setServicesHover(false)}
+                      >
+                        <div className="p-6">
+                          <div className="grid grid-cols-3 gap-6">
+                            {servicesCategories.map((category, catIndex) => (
+                              <div key={catIndex} className="space-y-3">
+                                <h3 className="font-bold text-gray-900 text-sm mb-3 pb-2 border-b border-gray-200">
+                                  {category.title}
+                                </h3>
+                                <ul className="space-y-2">
+                                  {category.services.map((service, serviceIndex) => (
+                                    <li key={serviceIndex}>
+                                      <Link
+                                        href={`/services/${service.slug}`}
+                                        prefetch={true}
+                                        className="block px-3 py-2 text-sm text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group"
+                                      >
+                                        <span className="group-hover:font-medium">
+                                          {service.name}
+                                        </span>
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                          <div className="mt-6 pt-6 border-t border-gray-200">
+                            <Link
+                              href="/services"
+                              prefetch={true}
+                              className="flex items-center justify-center px-4 py-2 text-sm font-semibold text-primary-600 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-all duration-200"
+                            >
+                              Voir tous les services
+                              {/* @ts-ignore */}
+                              <ArrowRight className="w-4 h-4 ml-2" />
+                            </Link>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+              </div>
             ))}
           </div>
 
