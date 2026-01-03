@@ -119,9 +119,9 @@ export default function Services() {
                        viewport={{ once: true }}
                        transition={{ duration: 0.6, delay: index * 0.1 }}
                        whileHover={{ y: -5 }}
-                       className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group"
+                       className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group max-w-sm mx-auto"
                      >
-                       <div className="relative h-48 overflow-hidden">
+                       <div className="relative h-32 overflow-hidden">
                          <img
                            src={serviceImages[index]}
                            alt={service.title}
@@ -129,25 +129,25 @@ export default function Services() {
                          />
                          <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.color}`}></div>
                        </div>
-                       <div className="p-6 md:p-8">
-                         <div className={`w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                       <div className="p-5 md:p-6">
+                         <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform mx-auto`}>
                            {/* @ts-ignore */}
-                           <IconComponent className="w-7 h-7 md:w-8 md:h-8 text-white" />
+                           <IconComponent className="w-6 h-6 text-white" />
                          </div>
-                       <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 leading-[1.3]">
+                       <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 leading-[1.3] text-center">
                          {service.title}
                        </h3>
-                       <p className="text-base text-gray-600 leading-[1.7] mb-6">
+                       <p className="text-sm text-gray-600 leading-[1.7] mb-4 text-center">
                          {service.description}
                        </p>
                               <Link
                                 href={service.href}
                                 prefetch={true}
-                                className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors group/link text-base leading-[1.5]"
+                                className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors group/link text-sm leading-[1.5] mx-auto justify-center w-full"
                               >
                          En Savoir Plus
                          <svg
-                           className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover/link:translate-x-1 transition-transform flex-shrink-0"
+                           className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform flex-shrink-0"
                            fill="none"
                            stroke="currentColor"
                            viewBox="0 0 24 24"
