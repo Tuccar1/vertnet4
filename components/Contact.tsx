@@ -16,7 +16,7 @@ export default function Contact() {
       title: 'Téléphone',
       content: '+41 77 215 22 55',
       link: 'tel:+41772152255',
-      color: 'text-secondary-600',
+      color: 'text-primary-600',
     },
     {
       icon: Mail,
@@ -30,7 +30,7 @@ export default function Contact() {
       title: 'Website',
       content: 'www.genevenettoyage.ch',
       link: 'https://www.genevenettoyage.ch',
-      color: 'text-secondary-600',
+      color: 'text-primary-600',
     },
     {
       icon: MessageCircle,
@@ -45,7 +45,7 @@ export default function Contact() {
       content: '24h/24 et 7j/7',
       subContent: 'Service Non-Stop',
       link: null,
-      color: 'text-secondary-600',
+      color: 'text-primary-600',
     },
   ]
 

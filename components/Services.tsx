@@ -97,56 +97,74 @@ export default function Services() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {services.map((service, index) => {
-            const IconComponent = service.icon
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group"
-              >
-                <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
-                <div className="p-6 md:p-8">
-                  <div className={`w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                    {/* @ts-ignore */}
-                    <IconComponent className="w-7 h-7 md:w-8 md:h-8 text-white" />
-                  </div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 leading-[1.3]">
-                  {service.title}
-                </h3>
-                <p className="text-base text-gray-600 leading-[1.7] mb-6">
-                  {service.description}
-                </p>
-                       <Link
-                         href={service.href}
-                         prefetch={true}
-                         className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors group/link text-base leading-[1.5]"
-                       >
-                  En Savoir Plus
-                  <svg
-                    className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover/link:translate-x-1 transition-transform flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </Link>
-              </div>
-            </motion.div>
-            )
-          })}
-        </div>
+               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                 {services.map((service, index) => {
+                   const IconComponent = service.icon
+                   const serviceImages = [
+                     'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Canapés
+                     'https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Fin de Bail
+                     'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Fin de Chantier
+                     'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Conciergerie
+                     'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Immeubles
+                     'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Bureaux
+                     'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Toiture
+                     'https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Vitres
+                     'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', // Façade
+                   ]
+                   return (
+                     <motion.div
+                       key={index}
+                       initial={{ opacity: 0, y: 20 }}
+                       whileInView={{ opacity: 1, y: 0 }}
+                       viewport={{ once: true }}
+                       transition={{ duration: 0.6, delay: index * 0.1 }}
+                       whileHover={{ y: -5 }}
+                       className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group"
+                     >
+                       <div className="relative h-48 overflow-hidden">
+                         <img
+                           src={serviceImages[index]}
+                           alt={service.title}
+                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                         />
+                         <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.color}`}></div>
+                       </div>
+                       <div className="p-6 md:p-8">
+                         <div className={`w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                           {/* @ts-ignore */}
+                           <IconComponent className="w-7 h-7 md:w-8 md:h-8 text-white" />
+                         </div>
+                       <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 leading-[1.3]">
+                         {service.title}
+                       </h3>
+                       <p className="text-base text-gray-600 leading-[1.7] mb-6">
+                         {service.description}
+                       </p>
+                              <Link
+                                href={service.href}
+                                prefetch={true}
+                                className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors group/link text-base leading-[1.5]"
+                              >
+                         En Savoir Plus
+                         <svg
+                           className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover/link:translate-x-1 transition-transform flex-shrink-0"
+                           fill="none"
+                           stroke="currentColor"
+                           viewBox="0 0 24 24"
+                         >
+                           <path
+                             strokeLinecap="round"
+                             strokeLinejoin="round"
+                             strokeWidth={2}
+                             d="M9 5l7 7-7 7"
+                           />
+                         </svg>
+                       </Link>
+                     </div>
+                   </motion.div>
+                   )
+                 })}
+               </div>
       </div>
     </section>
   )
