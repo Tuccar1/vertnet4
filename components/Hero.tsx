@@ -87,14 +87,14 @@ export default function Hero() {
           className="max-w-4xl mx-auto text-center"
         >
           <motion.div variants={itemVariants}>
-            <span className="inline-block px-6 py-3 bg-gray-100 rounded-full text-gray-700 text-sm font-bold mb-8 border border-gray-200">
+            <span className="inline-block px-8 py-4 bg-gray-100 rounded-full text-gray-700 text-base font-bold mb-10 border border-gray-200">
               Excellence en Nettoyage Professionnel
             </span>
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 mb-6 leading-[1.2] tracking-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 mb-8 leading-[1.2] tracking-tight"
           >
             Votre Partenaire de{' '}
             <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
@@ -104,7 +104,7 @@ export default function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-gray-700 mb-10 leading-[1.7] max-w-2xl mx-auto font-medium"
+            className="text-xl md:text-2xl text-gray-700 mb-12 leading-[1.7] max-w-3xl mx-auto font-medium"
           >
             Services de nettoyage professionnel de qualité supérieure pour les
             entreprises et particuliers à Genève. Disponible 24h/24 et 7j/7.
@@ -112,17 +112,17 @@ export default function Hero() {
 
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-16"
+            className="flex flex-col sm:flex-row gap-5 md:gap-7 justify-center mb-20"
           >
-            <Link href="/booking" prefetch={true} className="btn-primary text-lg group">
+            <Link href="/booking" prefetch={true} className="btn-primary text-xl px-8 py-4 group">
               Demander un Devis
               {/* @ts-ignore */}
-              <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="inline-block ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/services"
               prefetch={true}
-              className="px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-lg font-semibold text-lg hover:bg-gray-900 hover:text-white transition-all duration-300"
+              className="px-8 py-4 border-2 border-gray-900 text-gray-900 rounded-lg font-semibold text-xl hover:bg-gray-900 hover:text-white transition-all duration-300"
             >
               Nos Services
             </Link>
@@ -131,7 +131,7 @@ export default function Hero() {
           {/* Features - Premium Profesyonel Kartlar */}
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-20"
+            className="grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-10 mt-24"
           >
             {features.map((feature, index) => (
               <motion.div
@@ -147,10 +147,10 @@ export default function Hero() {
                 className="relative group"
               >
                 {/* Ana Kart - Minimalist ve Profesyonel */}
-                <div className={`relative bg-white/98 backdrop-blur-xl rounded-xl p-8 md:p-10 border-2 ${feature.borderColor} shadow-xl hover:shadow-2xl transform transition-all duration-300`}>
+                <div className={`relative bg-white/98 backdrop-blur-xl rounded-xl p-10 md:p-12 border-2 ${feature.borderColor} shadow-xl hover:shadow-2xl transform transition-all duration-300`}>
                   {/* Üst Çizgi */}
                   <motion.div
-                    className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${feature.gradient} rounded-t-xl`}
+                    className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${feature.gradient} rounded-t-xl`}
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: 0.8, delay: index * 0.15 }}
@@ -160,7 +160,7 @@ export default function Hero() {
                   <div className="relative z-10 text-center">
                     {/* Text - Daha büyük ve bold */}
                     <motion.div
-                      className={`font-bold text-xl md:text-2xl ${feature.textColor} mt-2 leading-tight`}
+                      className={`font-bold text-2xl md:text-3xl ${feature.textColor} mt-2 leading-tight`}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.15 + 0.3 }}
