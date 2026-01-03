@@ -69,13 +69,15 @@ export default function Hero() {
       id="accueil"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 bg-white w-full overflow-x-hidden"
     >
-      {/* Background Image */}
+      {/* Background Image - Cleaning Service Professional */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-          alt="Nettoyage professionnel à Genève"
-          className="w-full h-full object-cover opacity-10"
+          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          alt="Nettoyage professionnel à Genève - Service de nettoyage avec gants bleus et spray"
+          className="w-full h-full object-cover opacity-15"
         />
+        {/* Gradient Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white/70"></div>
       </div>
 
       {/* Content */}
