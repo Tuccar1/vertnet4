@@ -103,13 +103,25 @@ export default function RootLayout({
                     return;
                   }
                   if (rootDiv) {
+                    // Services sayfası kontrolü için data attribute ekle
+                    var isServicesPage = window.location.pathname === '/services';
+                    if (isServicesPage) {
+                      rootDiv.setAttribute('data-page', 'services');
+                    }
                     applyScaleToDiv(rootDiv);
                   }
                 }
                 function applyScaleToDiv(div) {
                   var isDesktop = window.innerWidth >= 769 && window.matchMedia('(min-width: 769px)').matches;
+                  var isServicesPage = window.location.pathname === '/services';
                          if (isDesktop) {
-                           div.style.cssText += 'transform: scale(0.8) !important; transform-origin: top left !important; width: 125% !important; height: 125% !important; overflow-x: hidden !important; position: relative !important; margin: 0 !important; padding: 0 !important;';
+                           if (isServicesPage) {
+                             // Services sayfası için %75 scale
+                             div.style.cssText += 'transform: scale(0.75) !important; transform-origin: top left !important; width: 133.33% !important; height: 133.33% !important; overflow-x: hidden !important; position: relative !important; margin: 0 !important; padding: 0 !important;';
+                           } else {
+                             // Diğer sayfalar için %80 scale
+                             div.style.cssText += 'transform: scale(0.8) !important; transform-origin: top left !important; width: 125% !important; height: 125% !important; overflow-x: hidden !important; position: relative !important; margin: 0 !important; padding: 0 !important;';
+                           }
                          } else {
                            div.style.cssText += 'transform: scale(1) !important; width: 100% !important; height: 100% !important; overflow-x: hidden !important;';
                          }

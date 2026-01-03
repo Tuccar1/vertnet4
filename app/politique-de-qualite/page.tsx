@@ -9,11 +9,11 @@ export const metadata = {
 
 export default function QualityPolicyPage() {
   return (
-    <>
+    <div className="quality-policy-page-wrapper overflow-x-hidden w-full">
       <Navigation />
       <QualityPolicy />
       <Footer />
-    </>
+    </div>
   )
 }
 
