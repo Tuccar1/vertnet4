@@ -142,13 +142,15 @@ export default function Testimonials() {
         <div className="absolute inset-0 opacity-55">
           <Image
             src="/cleaning-3.jpg"
-            alt="Cleaning background"
+            alt="Témoignages clients satisfaits - Services de nettoyage professionnel Vertnetgeneve"
             fill
             className="object-cover object-center"
             style={{
               filter: 'brightness(1.0) contrast(1.15) saturate(1.3) blur(1px)',
             }}
             quality={90}
+            sizes="100vw"
+            loading="lazy"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-gray-50/30 to-white/50"></div>

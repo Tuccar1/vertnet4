@@ -57,9 +57,11 @@ export default function WhyChooseUs() {
         <div className="absolute inset-0 opacity-55">
           <Image
             src="/unnamed.jpg"
-            alt="Cleaning background"
+            alt="Services de nettoyage professionnel à Genève - Pourquoi choisir Vertnetgeneve"
             fill
             className="object-cover"
+            sizes="100vw"
+            loading="lazy"
             style={{
               objectPosition: 'left center',
               filter: 'brightness(1.0) contrast(1.15) saturate(1.3) blur(1px)',
@@ -94,7 +96,7 @@ export default function WhyChooseUs() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
           {reasons.map((reason, index) => {
-            const IconComponent = reason.icon
+            const IconComponent = reason.icon as React.ComponentType<{ className?: string }>
             const reasonImages = [
               'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // 24/7 - Cleaning service available
               'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Satisfaction - Happy customer
@@ -114,15 +116,17 @@ export default function WhyChooseUs() {
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 max-w-sm mx-auto"
               >
                 <div className="relative h-20 sm:h-24 md:h-28 overflow-hidden">
-                  <img
+                  <Image
                     src={reasonImages[index]}
-                    alt={reason.title}
-                    className="w-full h-full object-cover"
+                    alt={`${reason.title} - Vertnetgeneve`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    quality={85}
                   />
                 </div>
                 <div className="p-5 md:p-6">
                   <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl ${reason.bgColor} flex items-center justify-center mb-3 sm:mb-4 -mt-5 sm:-mt-6 relative z-10 mx-auto`}>
-                    {/* @ts-ignore */}
                     <IconComponent className={`w-5 h-5 sm:w-6 sm:h-6 ${reason.color}`} />
                   </div>
                 <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 mb-2 sm:mb-3 leading-[1.3] text-center">

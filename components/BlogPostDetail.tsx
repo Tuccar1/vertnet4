@@ -6,6 +6,7 @@ import { Calendar, Clock, ArrowLeft, Tag, Share2 } from 'lucide-react'
 import { BlogPost } from '@/lib/blog'
 import { format } from 'date-fns'
 import { fr } from 'date-fns/locale'
+import Image from 'next/image'
 
 interface BlogPostDetailProps {
   post: BlogPost
@@ -70,10 +71,14 @@ export default function BlogPostDetail({ post }: BlogPostDetailProps) {
             
             {post.image && (
               <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8">
-                <img
+                <Image
                   src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover"
+                  alt={`${post.title} - Article blog Vertnetgeneve`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 896px"
+                  quality={90}
+                  loading="lazy"
                 />
               </div>
             )}

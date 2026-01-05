@@ -59,10 +59,10 @@ export default function BookingForm() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-gray-900 mb-4 sm:mb-6 px-2">
               Réserver un Service
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 px-2">
               Réservez votre service de nettoyage en ligne. Disponible 24h/24 et 7j/7.
             </p>
           </motion.div>

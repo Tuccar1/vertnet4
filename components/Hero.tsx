@@ -6,39 +6,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Hero() {
-  // Sadece bu fotoğraf - Eldivenli El Cam Temizliği
   const heroImage = { url: '/cleaning-4.webp', name: 'Eldivenli El Cam Temizliği' }
   
-  // 20 TAMAMEN YENİ kaliteli Nettoyage (Temizlik İşletmesi) fotoğrafı - Farklı kaynaklar ve farklı ID'ler
-  const cleaningImages = [
-    // Yerel Yüklenen Fotoğraflar (İlk 4) - Public klasöründeki dosyalar
-    { url: '/cleaning-1.avif', name: '1. Temizlik Malzemeleri ile Kız' },
-    { url: '/cleaning-2.jpg', name: '2. Temizlik Görseli' },
-    { url: '/cleaning-3.jpg', name: '3. Profesyonel Temizlik' },
-    { url: '/cleaning-4.webp', name: '4. Eldivenli El Cam Temizliği' },
-    
-    // Unsplash - Window Cleaning & Professional Services (FARKLI ID'ler)
-    { url: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80', name: '5. Cam Temizlikçi - Bina Dışı' },
-    { url: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80', name: '6. Yüksek Bina Cam Temizliği' },
-    { url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80', name: '7. Cam Temizlik Ekipmanı' },
-    { url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80', name: '8. Profesyonel Cam Temizlikçi' },
-    { url: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80', name: '9. Temizlik Malzemeleri' },
-    { url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80', name: '10. Bina Dışı Temizlik' },
-    { url: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80', name: '11. Yüksek Bina Cam Temizliği 2' },
-    
-    // Pexels - Professional Cleaning Service (FARKLI ID'ler)
-    { url: 'https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=2000&h=2000&fit=crop', name: '12. Profesyonel Temizlik Ekibi' },
-    { url: 'https://images.pexels.com/photos/3807278/pexels-photo-3807278.jpeg?auto=compress&cs=tinysrgb&w=2000&h=2000&fit=crop', name: '13. Ofis Temizliği Hizmeti' },
-    { url: 'https://images.pexels.com/photos/3807279/pexels-photo-3807279.jpeg?auto=compress&cs=tinysrgb&w=2000&h=2000&fit=crop', name: '14. Ticari Temizlik' },
-    { url: 'https://images.pexels.com/photos/3807280/pexels-photo-3807280.jpeg?auto=compress&cs=tinysrgb&w=2000&h=2000&fit=crop', name: '15. Temizlik Personeli Çalışıyor' },
-    { url: 'https://images.pexels.com/photos/3807281/pexels-photo-3807281.jpeg?auto=compress&cs=tinysrgb&w=2000&h=2000&fit=crop', name: '16. Büro Temizliği Ekibi' },
-    
-    // Pixabay - Cleaning Services (FARKLI ID'ler)
-    { url: 'https://cdn.pixabay.com/photo/2016/11/18/17/20/cleaning-1836413_1280.jpg', name: '17. Ev Temizliği Hizmeti' },
-    { url: 'https://cdn.pixabay.com/photo/2017/08/27/10/16/interior-2685521_1280.jpg', name: '18. İç Mekan Temizlik' },
-    { url: 'https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg', name: '19. Konut Temizliği' },
-    { url: 'https://cdn.pixabay.com/photo/2014/12/10/20/56/medical-563427_1280.jpg', name: '20. Dezenfeksiyon Hizmeti' },
-  ]
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -76,7 +45,7 @@ export default function Hero() {
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
             src={heroImage.url}
-            alt={heroImage.name}
+            alt="Services de nettoyage professionnel à Genève - Vertnetgeneve Excellence"
             fill
             className="object-cover object-center"
             style={{
@@ -88,7 +57,7 @@ export default function Hero() {
             }}
             priority
             quality={100}
-            unoptimized
+            sizes="100vw"
           />
         </div>
         
@@ -184,7 +153,7 @@ export default function Hero() {
                 { icon: Facebook, href: '#', label: 'Facebook', color: 'from-blue-500 to-blue-600' },
                 { icon: Linkedin, href: '#', label: 'LinkedIn', color: 'from-blue-600 to-blue-700' },
                 { icon: Instagram, href: '#', label: 'Instagram', color: 'from-pink-500 via-purple-500 to-orange-500' },
-                { icon: MessageCircle, href: 'https://wa.me/41772152255', label: 'WhatsApp', color: 'from-green-500 to-green-600' },
+                { icon: MessageCircle, href: 'https://wa.me/41766212183', label: 'WhatsApp', color: 'from-green-500 to-green-600' },
               ].map((social, index) => {
                 const IconComponent = social.icon
                 return (

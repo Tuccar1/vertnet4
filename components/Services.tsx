@@ -134,8 +134,10 @@ export default function Services() {
                     <div className="flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300 relative">
                       <Image
                         src={service.image}
-                        alt={service.title}
+                        alt={`${service.title} - Service de nettoyage professionnel à Genève`}
                         fill
+                        sizes="(max-width: 640px) 96px, (max-width: 768px) 128px, 160px"
+                        loading="lazy"
                         className="object-cover group-hover:scale-110 transition-transform duration-300"
                         style={{
                           objectPosition: service.image.includes('3.jpg') 
@@ -152,8 +154,7 @@ export default function Services() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-3 mb-2 sm:mb-3">
                         <div className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center shadow-md`}>
-                          {/* @ts-ignore */}
-                          <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                          {React.createElement(IconComponent, { className: "w-5 h-5 sm:w-6 sm:h-6 text-white" })}
                         </div>
                         <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-gray-900 group-hover:text-primary-600 transition-colors leading-tight">
                           {service.title}

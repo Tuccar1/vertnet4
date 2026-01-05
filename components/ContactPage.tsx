@@ -11,7 +11,7 @@ export default function ContactPage() {
       <div className="fixed inset-0 z-0">
         <Image
           src="/cleaning-3.jpg"
-          alt="Contact background"
+          alt="Contactez Vertnetgeneve - Devis gratuit nettoyage professionnel à Genève"
           fill
           className="object-cover"
           style={{
@@ -68,7 +68,7 @@ export default function ContactPage() {
               </motion.div>
             </motion.div>
             
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3 sm:mb-4 px-2">
               Contactez-Nous
             </h1>
             <motion.div
@@ -105,7 +105,6 @@ export default function ContactPage() {
                 <div className="space-y-4">
                   <div className="flex items-start space-x-4 p-4 bg-white border-2 border-gray-200 rounded-xl hover:border-primary-300 hover:shadow-md transition-all duration-300">
                     <div className="p-2 bg-primary-50 rounded-lg flex-shrink-0">
-                      {/* @ts-ignore */}
                       <MapPin className="w-5 h-5 text-primary-600" />
                     </div>
                     <div>
@@ -116,7 +115,6 @@ export default function ContactPage() {
                   
                   <div className="flex items-start space-x-4 p-4 bg-white border-2 border-gray-200 rounded-xl hover:border-primary-300 hover:shadow-md transition-all duration-300">
                     <div className="p-2 bg-primary-50 rounded-lg flex-shrink-0">
-                      {/* @ts-ignore */}
                       <Phone className="w-5 h-5 text-primary-600" />
                     </div>
                     <div>
@@ -129,7 +127,6 @@ export default function ContactPage() {
                   
                   <div className="flex items-start space-x-4 p-4 bg-white border-2 border-gray-200 rounded-xl hover:border-primary-300 hover:shadow-md transition-all duration-300">
                     <div className="p-2 bg-primary-50 rounded-lg flex-shrink-0">
-                      {/* @ts-ignore */}
                       <Mail className="w-5 h-5 text-primary-600" />
                     </div>
                     <div>
@@ -142,7 +139,6 @@ export default function ContactPage() {
                   
                   <div className="flex items-start space-x-4 p-4 bg-white border-2 border-gray-200 rounded-xl hover:border-primary-300 hover:shadow-md transition-all duration-300">
                     <div className="p-2 bg-primary-50 rounded-lg flex-shrink-0">
-                      {/* @ts-ignore */}
                       <Globe className="w-5 h-5 text-primary-600" />
                     </div>
                     <div>
@@ -155,7 +151,6 @@ export default function ContactPage() {
                   
                   <div className="flex items-start space-x-4 p-4 bg-white border-2 border-gray-200 rounded-xl hover:border-primary-300 hover:shadow-md transition-all duration-300">
                     <div className="p-2 bg-primary-50 rounded-lg flex-shrink-0">
-                      {/* @ts-ignore */}
                       <MessageCircle className="w-5 h-5 text-primary-600" />
                     </div>
                     <div>
@@ -166,7 +161,6 @@ export default function ContactPage() {
                   
                   <div className="flex items-start space-x-4 p-4 bg-white border-2 border-gray-200 rounded-xl hover:border-primary-300 hover:shadow-md transition-all duration-300">
                     <div className="p-2 bg-primary-50 rounded-lg flex-shrink-0">
-                      {/* @ts-ignore */}
                       <Clock className="w-5 h-5 text-primary-600" />
                     </div>
                     <div>

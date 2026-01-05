@@ -147,16 +147,16 @@ export default function PortfolioGallery() {
               </motion.div>
             </motion.div>
             
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-3 sm:mb-4 px-2">
               Portfolio
             </h1>
             <motion.div
               initial={{ opacity: 0, width: 0 }}
               animate={{ opacity: 1, width: "100%" }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 rounded-full mx-auto mb-6 max-w-xs"
+              className="h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 rounded-full mx-auto mb-4 sm:mb-6 max-w-xs"
             />
-            <p className="text-xl md:text-2xl text-gray-700">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 px-2">
               Découvrez nos réalisations et témoignages clients
             </p>
           </motion.div>

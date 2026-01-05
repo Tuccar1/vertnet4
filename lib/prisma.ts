@@ -9,5 +9,6 @@
 
 // if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
 
-export const prisma = null as any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const prisma: null = null
 

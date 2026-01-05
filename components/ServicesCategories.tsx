@@ -1,8 +1,10 @@
 'use client'
 
+import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Home, Building2, Layers, ArrowRight } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import Image from 'next/image'
 
 const categories = [
@@ -57,7 +59,7 @@ export default function ServicesCategories() {
       <div className="fixed inset-0 z-0">
         <Image
           src="/istockphoto-488989384-612x612.jpg"
-          alt="Cleaning background"
+          alt="Nos Services de Nettoyage Professionnel - Vertnetgeneve Genève"
           fill
           className="object-cover"
           style={{
@@ -114,7 +116,7 @@ export default function ServicesCategories() {
               </motion.div>
             </motion.div>
             
-            <h1 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-3 sm:mb-4 px-2">
               Nos Services
             </h1>
             <motion.div
@@ -136,7 +138,7 @@ export default function ServicesCategories() {
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {categories.map((category, index) => {
-            const IconComponent = category.icon
+            const IconComponent = category.icon as React.ComponentType<{ className?: string }>
             return (
               <motion.div
                 key={index}
@@ -159,15 +161,15 @@ export default function ServicesCategories() {
                   <div className="relative h-40 overflow-hidden">
                     <Image
                       src={category.image}
-                      alt={category.title}
+                      alt={`${category.title} - Services de nettoyage professionnel à Genève`}
                       fill
                       className="object-cover"
                       quality={100}
                       sizes="(max-width: 768px) 100vw, 33vw"
+                      loading="lazy"
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t ${category.color} opacity-60`}></div>
                     <div className={`absolute top-3 left-3 w-9 h-9 rounded-lg bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg`}>
-                      {/* @ts-ignore */}
                       <IconComponent className="w-4 h-4 text-gray-900" />
                     </div>
                   </div>
@@ -187,11 +189,12 @@ export default function ServicesCategories() {
                             <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden relative">
                               <Image
                                 src={service.image}
-                                alt={service.name}
+                                alt={`${service.name} - Service de nettoyage professionnel Vertnetgeneve`}
                                 fill
                                 className="object-cover group-hover/item:scale-110 transition-transform duration-300"
                                 quality={100}
                                 sizes="48px"
+                                loading="lazy"
                               />
                             </div>
                             <div className="flex-1 min-w-0">

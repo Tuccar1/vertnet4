@@ -48,7 +48,7 @@ export default function AboutPage() {
       <div className="fixed inset-0 z-0">
         <Image
           src="/How-to-Safely-Clean-a-Tile-Roof-Without-Ruining-It-1024x683.jpg"
-          alt="About background"
+          alt="À propos de Vertnetgeneve - Services de nettoyage professionnel à Genève"
           fill
           className="object-cover"
           style={{
@@ -105,7 +105,7 @@ export default function AboutPage() {
               </motion.div>
             </motion.div>
             
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-3">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-3 sm:mb-4 px-2">
               À Propos de Notre Entreprise
             </h1>
             <motion.div
@@ -187,10 +187,10 @@ export default function AboutPage() {
           >
             <div className="bg-white rounded-3xl p-10 md:p-14 lg:p-16 shadow-xl border-2 border-primary-200/50">
               <div className="text-center mb-12 md:mb-16">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-gray-900 mb-4 sm:mb-6 px-2">
                   Notre Entreprise
                 </h2>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-semibold bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent mb-8">
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display font-semibold bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent mb-6 sm:mb-8 px-2">
                   Au cœur de Genève, pour un avenir plus propre
                 </h3>
               </div>
@@ -281,7 +281,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-8 md:mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold mb-6 sm:mb-8 md:mb-10 px-2">
               Rejoignez-Nous dans Notre Mission
             </h2>
             <p className="text-xl md:text-2xl mb-10 md:mb-12 text-white/90 leading-relaxed">

@@ -110,7 +110,7 @@ export default function ReglementSecurite() {
       <div className="fixed inset-0 z-0">
         <Image
           src="/2-750x510.jpg"
-          alt="Cleaning background"
+          alt="Règlement et Sécurité - Conformité légale et sécurité du personnel - Vertnetgeneve"
           fill
           className="object-cover"
           style={{
@@ -119,6 +119,7 @@ export default function ReglementSecurite() {
           quality={95}
           priority={false}
           sizes="100vw"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white/25 via-white/20 to-white/25"></div>
       </div>
@@ -167,14 +168,14 @@ export default function ReglementSecurite() {
               </motion.div>
             </motion.div>
             
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-gray-900 mb-3 sm:mb-4 px-2">
               Règlement & Sécurité
             </h1>
             <motion.div
               initial={{ opacity: 0, width: 0 }}
               animate={{ opacity: 1, width: "100%" }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 rounded-full mx-auto mb-6 max-w-xs"
+              className="h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 rounded-full mx-auto mb-4 sm:mb-6 max-w-xs"
             />
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
               Conformité légale complète et engagement sans faille pour la sécurité

@@ -72,13 +72,15 @@ export default function About() {
         <div className="absolute inset-0 opacity-55">
           <Image
             src="/istockphoto-488989384-612x612.jpg"
-            alt="Cleaning background"
+            alt="Services de nettoyage professionnel à Genève - Vertnetgeneve"
             fill
             className="object-cover object-center"
             style={{
               filter: 'brightness(1.0) contrast(1.15) saturate(1.3) blur(1px)',
             }}
             quality={90}
+            loading="lazy"
+            sizes="100vw"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-primary-50/30 to-primary-50/50"></div>

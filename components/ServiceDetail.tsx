@@ -27,18 +27,18 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-gray-900 mb-3 sm:mb-4 px-2">
               {service.title}
             </h1>
-            <p className="text-2xl md:text-3xl font-semibold bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent mb-6">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent mb-4 sm:mb-6 px-2">
               {service.tagline}
             </p>
             {service.heightCapability && (
-              <div className="inline-block px-6 py-3 bg-white/90 backdrop-blur-md rounded-full text-gray-900 font-bold shadow-lg mb-8">
+              <div className="inline-block px-4 py-2 sm:px-6 sm:py-3 bg-white/90 backdrop-blur-md rounded-full text-gray-900 text-sm sm:text-base font-bold shadow-lg mb-6 sm:mb-8">
                 Jusqu'à {service.heightCapability} de hauteur
               </div>
             )}
-            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto px-2">
               {service.description}
             </p>
           </motion.div>

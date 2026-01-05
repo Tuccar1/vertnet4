@@ -250,7 +250,6 @@ export default function Navigation() {
                               className="flex items-center justify-center px-4 py-2 text-sm font-semibold text-primary-600 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-all duration-200"
                             >
                               Voir tous les services
-                              {/* @ts-ignore */}
                               <ArrowRight className="w-4 h-4 ml-2" />
                             </Link>
                           </div>
@@ -265,7 +264,7 @@ export default function Navigation() {
           </div>
 
           {/* Contact Info & CTA - Daha Premium */}
-          <div className="hidden lg:flex items-center gap-x-0.5 xl:gap-x-1 flex-shrink-0 min-w-0">
+          <div className="hidden lg:flex items-center gap-x-2 xl:gap-x-3 2xl:gap-x-4 flex-shrink-0 min-w-0">
             <motion.a
               href="tel:+41766212183"
               className="flex items-center gap-x-0.5 text-gray-700 hover:text-accent-600 transition-colors group whitespace-nowrap flex-shrink-0"
@@ -273,26 +272,24 @@ export default function Navigation() {
               whileTap={{ scale: 0.95 }}
             >
                     <div className="p-1 bg-gradient-to-br from-accent-50 to-accent-100 rounded-lg group-hover:from-accent-100 group-hover:to-accent-200 transition-all duration-300 shadow-sm group-hover:shadow-md flex-shrink-0">
-                      {/* @ts-ignore */}
                       <Phone className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-accent-600" />
               </div>
               <span className="font-bold text-[10px] lg:text-xs hidden 2xl:inline leading-tight">+41 76 621 21 83</span>
               <span className="font-bold text-[10px] lg:text-xs 2xl:hidden leading-tight">+41 76</span>
             </motion.a>
             
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-shrink-0">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-shrink-0 ml-2 xl:ml-3">
               <Link
                 href="/booking"
-                className="relative px-2 py-1.5 lg:px-2.5 lg:py-2 xl:px-3 xl:py-2.5 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 text-white rounded-lg font-bold text-[10px] lg:text-xs xl:text-sm shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group whitespace-nowrap flex items-center leading-tight"
+                className="relative px-2 py-1.5 lg:px-2.5 lg:py-2 xl:px-3 xl:py-2.5 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white rounded-lg font-bold text-[10px] lg:text-xs xl:text-sm shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group whitespace-nowrap flex items-center leading-tight"
               >
                 <span className="relative z-10 flex items-center">
                         <span className="hidden 2xl:inline">Devis Gratuit</span>
                         <span className="2xl:hidden">Devis</span>
-                        {/* @ts-ignore */}
                         <ArrowRight className="w-2.5 h-2.5 lg:w-3 lg:h-3 xl:w-3.5 xl:h-3.5 ml-0.5 lg:ml-1 flex-shrink-0" />
                 </span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600"
+                  className="absolute inset-0 bg-gradient-to-r from-gray-800 via-gray-900 to-black"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}
@@ -317,7 +314,6 @@ export default function Navigation() {
                         exit={{ rotate: 90, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                       >
-                        {/* @ts-ignore */}
                         <X className="w-5 h-5" />
                       </motion.div>
                     ) : (
@@ -328,7 +324,6 @@ export default function Navigation() {
                         exit={{ rotate: -90, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                       >
-                        {/* @ts-ignore */}
                         <Menu className="w-5 h-5" />
                       </motion.div>
                     )}
@@ -372,7 +367,6 @@ export default function Navigation() {
                     transition={{ delay: navItems.length * 0.1 }}
                     onClick={() => setIsOpen(false)}
                   >
-                    {/* @ts-ignore */}
                     <Phone className="w-5 h-5" />
                     <span>+41 76 621 21 83</span>
                   </motion.a>

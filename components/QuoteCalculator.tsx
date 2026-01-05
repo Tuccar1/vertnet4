@@ -304,7 +304,7 @@ export default function QuoteCalculator() {
               </motion.div>
             </motion.div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">
               Calculateur de Devis
             </h1>
             <motion.div
