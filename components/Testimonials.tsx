@@ -234,9 +234,9 @@ export default function Testimonials() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between mb-1">
-                        <h4 className="font-bold text-gray-900 text-base truncate">
+                        <div className="font-bold text-gray-900 text-base truncate">
                           {testimonial.name}
-                        </h4>
+                        </div>
                         <span className="text-xs text-gray-500 flex-shrink-0 ml-2">
                           {testimonial.date}
                         </span>

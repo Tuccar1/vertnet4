@@ -75,7 +75,7 @@ export default function Contact() {
                         <IconComponent className="w-4 h-4" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-bold mb-1 text-sm leading-[1.5] text-gray-900">{item.title}</h4>
+                        <div className="font-bold mb-1 text-sm leading-[1.5] text-gray-900">{item.title}</div>
                         {item.link ? (
                           <a
                             href={item.link}

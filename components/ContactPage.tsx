@@ -108,7 +108,7 @@ export default function ContactPage() {
                       <MapPin className="w-5 h-5 text-primary-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">Adresse</h4>
+                      <div className="font-bold text-gray-900 mb-1 text-base">Adresse</div>
                       <p className="text-gray-600 text-sm">Genève, Suisse</p>
                     </div>
                   </div>
@@ -118,7 +118,7 @@ export default function ContactPage() {
                       <Phone className="w-5 h-5 text-primary-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">Téléphone</h4>
+                      <div className="font-bold text-gray-900 mb-1 text-base">Téléphone</div>
                       <a href="tel:+41766212183" className="text-gray-600 hover:text-primary-600 transition text-sm">
                         +41 76 621 21 83
                       </a>
@@ -130,7 +130,7 @@ export default function ContactPage() {
                       <Mail className="w-5 h-5 text-primary-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">Email</h4>
+                      <div className="font-bold text-gray-900 mb-1 text-base">Email</div>
                       <a href="mailto:info@vertnetgeneve.ch" className="text-gray-600 hover:text-primary-600 transition text-sm">
                         info@vertnetgeneve.ch
                       </a>
@@ -142,7 +142,7 @@ export default function ContactPage() {
                       <Globe className="w-5 h-5 text-primary-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">Website</h4>
+                      <div className="font-bold text-gray-900 mb-1 text-base">Website</div>
                       <a href="https://www.vertnetgeneve.ch" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary-600 transition text-sm">
                         www.vertnetgeneve.ch
                       </a>
@@ -154,7 +154,7 @@ export default function ContactPage() {
                       <MessageCircle className="w-5 h-5 text-primary-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">WhatsApp</h4>
+                      <div className="font-bold text-gray-900 mb-1 text-base">WhatsApp</div>
                       <p className="text-gray-600 text-sm">Contactez-nous facilement via WhatsApp!</p>
                     </div>
                   </div>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                       <Clock className="w-5 h-5 text-primary-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-1 text-base">Disponibilité</h4>
+                      <div className="font-bold text-gray-900 mb-1 text-base">Disponibilité</div>
                       <p className="text-gray-600 font-semibold text-sm">24h/24 et 7j/7</p>
                       <p className="text-gray-500 text-xs mt-1">Service Non-Stop</p>
                     </div>
