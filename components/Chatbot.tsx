@@ -90,6 +90,13 @@ export default function Chatbot() {
 
     try {
       // Flowise API entegrasyonu
+      // History'yi hazırla - mevcut mesajı hariç tut (sadece önceki mesajlar)
+      const previousMessages = messages.filter(m => m.id !== userMessage.id)
+      const history = previousMessages.slice(-5).map(m => ({
+        role: m.sender === 'user' ? 'user' : 'assistant',
+        content: m.text
+      }))
+
       const response = await fetch('/api/chatbot', {
         method: 'POST',
         headers: {
@@ -97,10 +104,7 @@ export default function Chatbot() {
         },
         body: JSON.stringify({
           message: currentInput,
-          history: messages.slice(-5).map(m => ({
-            role: m.sender === 'user' ? 'user' : 'assistant',
-            content: m.text
-          })),
+          history: history,
         }),
       })
 
