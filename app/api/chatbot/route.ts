@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(request: NextRequest) {
   try {
-    const { message, history } = await request.json()
+    const { message, history, sessionId } = await request.json()
 
     if (!message || typeof message !== 'string' || message.trim() === '') {
       return NextResponse.json(
@@ -17,9 +17,16 @@ export async function POST(request: NextRequest) {
 
     try {
       // Flowise API için request body
-      // Önce history olmadan deneyelim - eğer çalışırsa history formatı sorunludur
       const requestBody: any = {
         question: message,
+        // SessionId Flowise'in dahili memory'sini kullanması için kritik
+        sessionId: sessionId || `session_${Date.now()}`,
+        // Override config ile memory ayarlarını zorla
+        overrideConfig: {
+          sessionId: sessionId || `session_${Date.now()}`,
+          returnSourceDocuments: false,
+          memoryKey: "chat_history",
+        }
       }
 
       // History varsa ekle (Flowise conversation memory için)

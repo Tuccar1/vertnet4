@@ -25,9 +25,56 @@ export default function Chatbot() {
   const [inputValue, setInputValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [isTyping, setIsTyping] = useState(false)
+  const [sessionId, setSessionId] = useState<string>('')
   
   const chatContainerRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
+
+  // SessionId oluştur veya localStorage'dan al
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      let storedSessionId = localStorage.getItem('chatbot_session_id')
+      if (!storedSessionId) {
+        storedSessionId = `chat_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+        localStorage.setItem('chatbot_session_id', storedSessionId)
+      }
+      setSessionId(storedSessionId)
+      
+      // Önceki mesajları da localStorage'dan yükle
+      const storedMessages = localStorage.getItem('chatbot_messages')
+      if (storedMessages) {
+        try {
+          const parsedMessages = JSON.parse(storedMessages)
+          if (Array.isArray(parsedMessages) && parsedMessages.length > 0) {
+            setMessages(parsedMessages.map((m: any) => ({
+              ...m,
+              timestamp: new Date(m.timestamp)
+            })))
+            setShowWelcomeForm(false)
+          }
+        } catch (e) {
+          // JSON parse hatası - yoksay
+        }
+      }
+      
+      // Kullanıcı bilgilerini de yükle
+      const storedUserInfo = localStorage.getItem('chatbot_user_info')
+      if (storedUserInfo) {
+        try {
+          setUserInfo(JSON.parse(storedUserInfo))
+        } catch (e) {
+          // Yoksay
+        }
+      }
+    }
+  }, [])
+  
+  // Mesajları localStorage'a kaydet
+  useEffect(() => {
+    if (typeof window !== 'undefined' && messages.length > 0) {
+      localStorage.setItem('chatbot_messages', JSON.stringify(messages))
+    }
+  }, [messages])
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -103,7 +150,7 @@ export default function Chatbot() {
       // Flowise API entegrasyonu
       // History'yi hazırla - mevcut mesajı hariç tut (sadece önceki mesajlar)
       const previousMessages = messages.filter(m => m.id !== userMessage.id)
-      const history = previousMessages.slice(-5).map(m => ({
+      const history = previousMessages.slice(-10).map(m => ({
         role: m.sender === 'user' ? 'user' : 'assistant',
         content: m.text
       }))
@@ -116,6 +163,7 @@ export default function Chatbot() {
         body: JSON.stringify({
           message: currentInput,
           history: history,
+          sessionId: sessionId, // Session ID eklendi - Flowise memory için kritik
         }),
       })
 
@@ -163,6 +211,11 @@ export default function Chatbot() {
     e.preventDefault()
     setShowWelcomeForm(false)
     
+    // Kullanıcı bilgilerini localStorage'a kaydet
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('chatbot_user_info', JSON.stringify(userInfo))
+    }
+    
     // Panel.chatdeskiyo.com'a form verilerini gönder
     if (typeof window !== 'undefined' && (window as any).vertnetTracker) {
       (window as any).vertnetTracker.trackFormSubmission({
@@ -177,6 +230,7 @@ export default function Chatbot() {
       (window as any).vertnetTracker.trackEvent('chat_started', {
         userName: userInfo.name,
         userPhone: userInfo.phone,
+        sessionId: sessionId,
         page: window.location.pathname
       });
     }
@@ -188,6 +242,32 @@ export default function Chatbot() {
       timestamp: new Date(),
       status: 'read'
     }])
+  }
+
+  // Yeni sohbet başlat - geçmişi temizle
+  const handleNewChat = () => {
+    if (typeof window !== 'undefined') {
+      // Yeni session ID oluştur
+      const newSessionId = `chat_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+      localStorage.setItem('chatbot_session_id', newSessionId)
+      setSessionId(newSessionId)
+      
+      // Mesaj geçmişini temizle
+      localStorage.removeItem('chatbot_messages')
+      setMessages([])
+      
+      // Welcome form'u tekrar göster (opsiyonel - kullanıcı bilgileri kalabilir)
+      // setShowWelcomeForm(true)
+      
+      // Hoşgeldin mesajı göster
+      setMessages([{
+        id: 'welcome',
+        text: `Bonjour ${userInfo.name || ''}! 👋 Nouvelle conversation. Comment puis-je vous aider?`,
+        sender: 'bot',
+        timestamp: new Date(),
+        status: 'read'
+      }])
+    }
   }
 
   return (
@@ -321,6 +401,19 @@ export default function Chatbot() {
                 </div>
               </div>
               <div className="flex items-center gap-0.5 sm:gap-1 relative z-10 flex-shrink-0">
+                {/* Yeni Sohbet Butonu */}
+                {!showWelcomeForm && messages.length > 1 && (
+                  <motion.button 
+                    onClick={(e) => { e.stopPropagation(); handleNewChat() }} 
+                    className="p-1.5 sm:p-2 hover:bg-white/25 rounded-lg transition-all duration-200 active:scale-95"
+                    whileHover={{ scale: 1.1, backgroundColor: 'rgba(255,255,255,0.3)' }}
+                    whileTap={{ scale: 0.9 }}
+                    aria-label="Nouvelle conversation"
+                    title="Nouvelle conversation"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  </motion.button>
+                )}
                 <motion.button 
                   onClick={(e) => { e.stopPropagation(); setIsMinimized(!isMinimized) }} 
                   className="p-1.5 sm:p-2 hover:bg-white/25 rounded-lg transition-all duration-200 active:scale-95"
