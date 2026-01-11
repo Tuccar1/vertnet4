@@ -20,6 +20,24 @@ export default function BookingForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    // Panel.chatdeskiyo.com'a rezervasyon verilerini gönder
+    if (typeof window !== 'undefined' && (window as any).vertnetTracker) {
+      (window as any).vertnetTracker.trackFormSubmission({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
+        service: formData.service,
+        date: formData.date,
+        time: formData.time,
+        message: formData.message,
+        source: 'booking_form',
+        page: window.location.pathname,
+        formType: 'service_reservation'
+      });
+    }
+    
     setSubmitted(true)
     setTimeout(() => {
       setSubmitted(false)

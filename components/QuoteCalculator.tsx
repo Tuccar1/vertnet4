@@ -248,6 +248,29 @@ export default function QuoteCalculator() {
 
     setQuoteId(quoteData.quoteId)
 
+    // Panel.chatdeskiyo.com'a teklif verilerini gönder
+    if (typeof window !== 'undefined' && (window as any).vertnetTracker) {
+      (window as any).vertnetTracker.trackFormSubmission({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
+        quoteId: quoteData.quoteId,
+        service: quoteData.selectedService?.name || '',
+        squareMeters: squareMeters,
+        frequency: frequency,
+        propertyType: propertyType,
+        condition: condition,
+        totalPrice: totalPrice,
+        estimatedTime: estimatedTime,
+        addOns: selectedAddOns.join(', '),
+        message: formData.message,
+        source: 'quote_calculator',
+        page: window.location.pathname,
+        formType: 'devis_calculation'
+      });
+    }
+
     try {
       setSubmitted(true)
     } catch (error) {

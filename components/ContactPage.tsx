@@ -2,12 +2,20 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { MapPin, Phone, Mail, Globe, MessageCircle, Clock, Send, Sparkles, Loader2 } from 'lucide-react'
+import { MapPin, Phone, Mail, Globe, MessageCircle, Clock, Send, Sparkles, Loader2, CheckCircle } from 'lucide-react'
 import Image from 'next/image'
 
 export default function ContactPage() {
   const [mapLoaded, setMapLoaded] = useState(false)
   const [mapError, setMapError] = useState(false)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -16,6 +24,39 @@ export default function ContactPage() {
 
     return () => clearTimeout(timer)
   }, [])
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    // Panel.chatdeskiyo.com'a form verilerini gönder
+    if (typeof window !== 'undefined' && (window as any).vertnetTracker) {
+      (window as any).vertnetTracker.trackFormSubmission({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        source: 'contact_page_form',
+        page: window.location.pathname,
+        formType: 'devis_request'
+      });
+    }
+
+    // Simüle edilmiş gönderim (gerçek API'ye bağlanabilir)
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    
+    setIsSubmitting(false)
+    setIsSubmitted(true)
+    setFormData({ name: '', email: '', phone: '', message: '' })
+
+    // 5 saniye sonra success mesajını kaldır
+    setTimeout(() => setIsSubmitted(false), 5000)
+  }
   return (
     <div className="w-full relative">
       {/* Sabit arka plan fotoğraf - Tüm sayfada sabit kalacak */}
@@ -193,40 +234,74 @@ export default function ContactPage() {
                 <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-8">
                   Demander un Devis
                 </h2>
-                <form className="space-y-5">
+                {isSubmitted && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center gap-3"
+                  >
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <p className="text-green-800 text-sm">Merci! Votre demande a été envoyée. Nous vous contacterons bientôt.</p>
+                  </motion.div>
+                )}
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
                     <input
                       type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
                       placeholder="Nom complet"
+                      required
                       className="w-full px-4 py-3 rounded-xl bg-white border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition hover:border-gray-300"
                     />
                   </div>
                   <div>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       placeholder="Email"
+                      required
                       className="w-full px-4 py-3 rounded-xl bg-white border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition hover:border-gray-300"
                     />
                   </div>
                   <div>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       placeholder="Téléphone"
+                      required
                       className="w-full px-4 py-3 rounded-xl bg-white border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition hover:border-gray-300"
                     />
                   </div>
                   <div>
                     <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       placeholder="Message"
                       rows={5}
+                      required
                       className="w-full px-4 py-3 rounded-xl bg-white border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-none text-sm transition hover:border-gray-300"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-6 py-3.5 rounded-xl font-semibold text-base hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-6 py-3.5 rounded-xl font-semibold text-base hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
-                    Envoyer la Demande
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        Envoi en cours...
+                      </>
+                    ) : (
+                      'Envoyer la Demande'
+                    )}
                   </button>
                 </form>
               </motion.div>

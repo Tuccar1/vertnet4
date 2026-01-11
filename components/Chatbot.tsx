@@ -82,6 +82,17 @@ export default function Chatbot() {
     
     if (inputRef.current) inputRef.current.style.height = '48px'
 
+    // Panel.chatdeskiyo.com'a mesaj gönderimini track et
+    if (typeof window !== 'undefined' && (window as any).vertnetTracker) {
+      (window as any).vertnetTracker.trackEvent('message_sent', {
+        message: currentInput,
+        userName: userInfo.name,
+        userPhone: userInfo.phone,
+        messageCount: messages.length + 1,
+        page: window.location.pathname
+      });
+    }
+
     // Mesaj gönderildi olarak işaretle
     setTimeout(() => {
       setMessages(prev => prev.map(m => m.id === userMessage.id ? {...m, status: 'sent'} : m))
@@ -151,6 +162,25 @@ export default function Chatbot() {
   const handleWelcomeFormSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setShowWelcomeForm(false)
+    
+    // Panel.chatdeskiyo.com'a form verilerini gönder
+    if (typeof window !== 'undefined' && (window as any).vertnetTracker) {
+      (window as any).vertnetTracker.trackFormSubmission({
+        name: userInfo.name,
+        phone: userInfo.phone,
+        email: '',
+        source: 'chatbot_welcome_form',
+        page: window.location.pathname
+      });
+      
+      // Chat başladı event'i
+      (window as any).vertnetTracker.trackEvent('chat_started', {
+        userName: userInfo.name,
+        userPhone: userInfo.phone,
+        page: window.location.pathname
+      });
+    }
+    
     setMessages([{
       id: 'welcome',
       text: `Bonjour ${userInfo.name || ''}! 👋 Comment puis-je vous aider?`,
@@ -174,7 +204,16 @@ export default function Chatbot() {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => setIsOpen(true)}
+              onClick={() => {
+                setIsOpen(true)
+                // Panel.chatdeskiyo.com'a chatbot açıldığını track et
+                if (typeof window !== 'undefined' && (window as any).vertnetTracker) {
+                  (window as any).vertnetTracker.trackEvent('chatbot_opened', {
+                    page: window.location.pathname,
+                    timestamp: new Date().toISOString()
+                  });
+                }
+              }}
               className="relative w-16 h-16 bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 rounded-full shadow-[0_8px_32px_rgba(59,130,246,0.4)] flex items-center justify-center text-white hover:shadow-[0_12px_40px_rgba(59,130,246,0.6)] transition-all duration-300 group overflow-hidden"
               aria-label="Ouvrir le chatbot"
             >
