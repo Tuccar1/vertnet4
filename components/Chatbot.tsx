@@ -150,7 +150,7 @@ export default function Chatbot() {
       // Flowise API entegrasyonu
       // History'yi hazırla - mevcut mesajı hariç tut (sadece önceki mesajlar)
       const previousMessages = messages.filter(m => m.id !== userMessage.id)
-      const history = previousMessages.slice(-10).map(m => ({
+      const history = previousMessages.slice(-20).map(m => ({
         role: m.sender === 'user' ? 'user' : 'assistant',
         content: m.text
       }))

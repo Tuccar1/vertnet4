@@ -47,9 +47,9 @@ export async function POST(request: NextRequest) {
             }
           })
         
-        // Sadece geçerli history varsa ekle (max 10 mesaj)
+        // Sadece geçerli history varsa ekle (max 20 mesaj)
         if (flowiseHistory.length > 0) {
-          requestBody.history = flowiseHistory.slice(-10) // Son 10 mesajı al
+          requestBody.history = flowiseHistory.slice(-20) // Son 20 mesajı al
         }
       }
 
