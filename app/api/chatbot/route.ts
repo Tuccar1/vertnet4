@@ -11,47 +11,38 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // SessionId'yi garanti altına al
+    const finalSessionId = sessionId || `default_session`
+
     const CHATFLOW_ID = process.env.FLOWISE_CHATFLOW_ID || '3fadc7bf-109d-4649-af1f-c66773105a26'
     const FLOWISE_BASE_URL = process.env.FLOWISE_API_URL || 'https://flowise.chatdeskiyo.com'
     const FLOWISE_API_URL = `${FLOWISE_BASE_URL}/api/v1/prediction/${CHATFLOW_ID}`
 
     try {
-      // Flowise API için request body
-      const requestBody: any = {
-        question: message,
-        // SessionId Flowise'in dahili memory'sini kullanması için kritik
-        sessionId: sessionId || `session_${Date.now()}`,
-        // Override config ile memory ayarlarını zorla
-        overrideConfig: {
-          sessionId: sessionId || `session_${Date.now()}`,
-          returnSourceDocuments: false,
-          memoryKey: "chat_history",
+      // Konuşma geçmişini mesajın içine ekle - bu en güvenilir yöntem
+      let questionWithContext = message
+      
+      if (history && Array.isArray(history) && history.length > 0) {
+        const conversationHistory = history
+          .filter(msg => msg && msg.content && msg.content.trim())
+          .slice(-20)
+          .map(msg => `${msg.role === 'user' ? 'Kullanıcı' : 'Asistan'}: ${msg.content.trim()}`)
+          .join('\n')
+        
+        if (conversationHistory) {
+          questionWithContext = `[KONUŞMA GEÇMİŞİ - Bu bilgileri HATIRLA ve TEKRAR SORMA]\n${conversationHistory}\n\n[YENİ MESAJ]\nKullanıcı: ${message}\n\nÖNEMLİ: Yukarıdaki konuşma geçmişinde kullanıcı zaten isim, telefon, hizmet türü, tarih gibi bilgiler verdiyse bunları TEKRAR SORMA. Sadece eksik bilgileri sor.`
         }
       }
 
-      // History varsa ekle (Flowise conversation memory için)
-      // Flowise API formatı: [{ role: 'userMessage' | 'apiMessage', content: '...' }]
-      if (history && Array.isArray(history) && history.length > 0) {
-        // Component'ten gelen format: { role: 'user' | 'assistant', content: '...' }
-        // Flowise'in beklediği format: { role: 'userMessage' | 'apiMessage', content: '...' }
-        const flowiseHistory = history
-          .filter(msg => msg && msg.content && typeof msg.content === 'string' && msg.content.trim() !== '') // Boş mesajları filtrele
-          .map(msg => {
-            const role = msg.role || 'assistant' // Default assistant
-            const content = msg.content.trim()
-            
-            // Flowise formatına dönüştür: 'user' -> 'userMessage', 'assistant' -> 'apiMessage'
-            return {
-              role: role === 'user' ? 'userMessage' : 'apiMessage',
-              content: content,
-            }
-          })
-        
-        // Sadece geçerli history varsa ekle (max 20 mesaj)
-        if (flowiseHistory.length > 0) {
-          requestBody.history = flowiseHistory.slice(-20) // Son 20 mesajı al
+      const requestBody: any = {
+        question: questionWithContext,
+        sessionId: finalSessionId,
+        overrideConfig: {
+          sessionId: finalSessionId,
         }
       }
+
+      console.log('Flowise Request - SessionId:', finalSessionId, 'History Length:', history?.length || 0)
 
       const response = await fetch(FLOWISE_API_URL, {
         method: 'POST',
@@ -64,7 +55,6 @@ export async function POST(request: NextRequest) {
       if (!response.ok) {
         const errorText = await response.text()
         console.error('Flowise API Error:', response.status, errorText)
-        console.error('Request body that caused error:', JSON.stringify(requestBody, null, 2))
         throw new Error(`Flowise API error: ${response.status} - ${errorText.substring(0, 200)}`)
       }
 
@@ -80,8 +70,9 @@ export async function POST(request: NextRequest) {
         throw new Error('Empty or invalid response from Flowise API')
       }
 
-      return NextResponse.json({ answer: String(botResponse) })
+      return NextResponse.json({ answer: String(botResponse), sessionId: finalSessionId })
     } catch (error: any) {
+      console.error('Flowise Error:', error.message)
       return NextResponse.json(
         { 
           error: 'Internal server error',
@@ -91,7 +82,6 @@ export async function POST(request: NextRequest) {
       )
     }
   } catch (error: any) {
-    
     return NextResponse.json(
       { 
         error: 'Internal server error',
