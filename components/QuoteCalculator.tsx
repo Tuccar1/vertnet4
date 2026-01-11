@@ -264,7 +264,7 @@ export default function QuoteCalculator() {
         totalPrice: totalPrice,
         estimatedTime: estimatedTime,
         addOns: selectedAddOns.join(', '),
-        message: formData.message,
+        instructions: formData.instructions,
         source: 'quote_calculator',
         page: window.location.pathname,
         formType: 'devis_calculation'
